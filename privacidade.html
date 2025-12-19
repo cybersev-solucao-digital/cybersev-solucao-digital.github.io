@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CyberSev Solução Digital | Política de Privacidade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ 
+ <!-- Fonte Inter + Ícones (se quiser depois) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- CSS Compartilhado -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">CyberSev Solução Digital</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Política de Privacidade</h1>
+
+    <p>Última atualização: 18 de dezembro de 2025</p>
+
+    <h2>1. Coleta de Dados</h2>
+    <p>Coletamos apenas as informações necessárias para prestação dos serviços:</p>
+    <ul>
+      <li>Nome e e-mail (via formulário ou WhatsApp);</li>
+      <li>Telefone (para contato direto);</li>
+      <li>Conteúdo enviado pelo cliente (textos, imagens);</li>
+      <li>Dados técnicos (IP, dispositivo) apenas para análise de desempenho do site — sem identificação pessoal.</li>
+    </ul>
+
+    <h2>2. Uso das Informações</h2>
+    <p>Seus dados são utilizados exclusivamente para:</p>
+    <ul>
+      <li>Comunicação sobre o projeto;</li>
+      <li>Envio de propostas e atualizações;</li>
+      <li>Criação e entrega do site contratado;</li>
+      <li>Cumprimento de obrigações legais.</li>
+    </ul>
+    <p><strong>Não vendemos, alugamos ou compartilhamos seus dados com terceiros.</strong></p>
+
+    <h2>3. Proteção dos Dados</h2>
+    <p>Adotamos medidas técnicas e organizacionais para proteger suas informações:</p>
+    <ul>
+      <li>Comunicação via WhatsApp (criptografada de ponta a ponta);</li>
+      <li>Armazenamento local seguro (sem nuvem pública exposta);</li>
+      <li>Acesso restrito aos dados por equipe autorizada.</li>
+    </ul>
+
+    <h2>4. Direitos do Titular</h2>
+    <p>Você pode, a qualquer momento:</p>
+    <ul>
+      <li>Solicitar acesso aos dados armazenados;</li>
+      <li>Pedir correção ou exclusão;</li>
+      <li>Revogar o consentimento para uso dos dados.</li>
+    </ul>
+    <p>Basta entrar em contato pelo e-mail abaixo.</p>
+
+    <h2>5. Cookies</h2>
+    <p>Nosso site NÃO utiliza cookies de rastreamento, publicidade ou analytics. Pode usar apenas cookies técnicos essenciais (ex: preferência de tema), sem coleta de identificação.</p>
+
+    <h2>6. Contato</h2>
+    <p>Dúvidas ou solicitações sobre privacidade:</p>
+    <p>
+        <a href="mailto:cybersevsolucaodigital@gmail.com">✉️ cybersevsolucaodigital@gmail.com</a></br>
+    📱 <a href="https://wa.me/244934919736" style="color:#00c6ff">WhatsApp</a></p>
+    <!-- 🔹 Botão Flutuante Marcar Consulta -->
+<a href="consulta.html" id="cybersev-float-btn">
+  Marcar consulta
+</a>
+  </main>
+
+  <footer>
+    <p>CyberSev Solução Digital © 2025</p>
+    <p>Criação de Sites Profissionais</p>
+    <div class="footer-links">
+      <a href="termos.html">Termos de Uso</a>
+      <a href="privacidade.html">Política de Privacidade</a>
+    </div>
+    <div class="contacts">
+      <a href="https://wa.me/244934919736">📱 WhatsApp</a>
+      <a href="mailto:cybersevsolucaodigital@gmail.com">✉️ Email</a>
+      <a href="https://www.facebook.com/profile.php?id=61584367352301" target="_blank">📘 Facebook</a>
+    </div>
+  </footer>
+  <script>
+(function(){
+  const btn = document.getElementById("cybersev-float-btn");
+
+  function mostrarBotao(){
+    btn.classList.add("show");
+
+    // some novamente após 10s (discreto)
+    setTimeout(() => {
+      btn.classList.remove("show");
+    }, 10000);
+  }
+
+  // primeira aparição após 30s
+  setTimeout(mostrarBotao, 30000);
+
+  // reaparece a cada 30s
+  setInterval(mostrarBotao, 30000);
+})();
+</script>
+</body>
+</html>

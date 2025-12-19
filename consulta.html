@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Marcar Consulta Digital | CyberSev</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --bg:#070917;
+  --card:#0f122b;
+  --primary:#8a5cff;
+  --secondary:#00d4ff;
+  --accent:#ffb703;
+  --text:#ffffff;
+  --muted:#b7c0ff;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  padding:50px 15px;
+  background:
+    linear-gradient(135deg,#0b0f3a,#040615 70%);
+  font-family:Inter,system-ui,sans-serif;
+  color:var(--text);
+}
+
+.consulta-container{
+  max-width:580px;
+  margin:auto;
+  background:
+    linear-gradient(160deg,#151a4d,#0c1030);
+  padding:36px;
+  border-radius:24px;
+  box-shadow:0 25px 80px rgba(0,0,0,.7);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+h1{
+  text-align:center;
+  font-size:2rem;
+  background:linear-gradient(90deg,var(--secondary),var(--primary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:10px;
+}
+
+.intro{
+  text-align:center;
+  font-size:.95rem;
+  color:var(--muted);
+  margin-bottom:32px;
+}
+
+label{
+  display:block;
+  margin-bottom:20px;
+  font-size:.85rem;
+  color:#dfe3ff;
+}
+
+input,select,textarea{
+  width:100%;
+  margin-top:8px;
+  padding:13px 16px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.15);
+  background:#070a22;
+  color:#fff;
+  outline:none;
+  font-size:.95rem;
+}
+
+input::placeholder{
+  color:#7a80c5;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--secondary);
+  box-shadow:0 0 0 2px rgba(0,212,255,.25);
+}
+
+textarea{
+  resize:none;
+}
+
+button{
+  width:100%;
+  margin-top:30px;
+  padding:16px;
+  border-radius:50px;
+  border:none;
+  background:
+    linear-gradient(135deg,var(--secondary),var(--primary));
+  color:#02031a;
+  font-weight:800;
+  font-size:1rem;
+  cursor:pointer;
+  transition:.35s;
+}
+
+button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 15px 40px rgba(138,92,255,.45);
+}
+
+.aviso{
+  margin-top:18px;
+  font-size:.8rem;
+  text-align:center;
+  color:var(--accent);
+}
+</style>
+</head>
+
+<body>
+
+<main class="consulta-container">
+  <h1>Consulta Digital</h1>
+  <div style="max-width:400px;background:#0b1220;color:#fff;padding:20px;border-radius:10px;font-family:Arial, sans-serif;">
+  <h2 style="color:#00bfff;margin-top:0;">Pagar consulta</h2>
+
+  <p><strong>IBAN:</strong></p>
+  <p id="iban" style="background:#111a33;padding:10px;border-radius:6px;">
+    AO06 0006 0000 12766453301 75
+  </p>
+
+  <p><strong>Titular:</strong> João Enoc Sacassole</p>
+  <p><strong>Banco:</strong> BFA</p>
+
+  <button onclick="copiarIBAN()" 
+    style="margin-top:10px;width:100%;padding:10px;
+    background:#00bfff;border:none;border-radius:6px;
+    color:#000;font-weight:bold;cursor:pointer;">
+    Copiar IBAN
+  </button>
+
+  <p id="msg" style="margin-top:8px;color:#00ff99;display:none;">
+    IBAN copiado com sucesso!
+  </p>
+</div>
+
+  <p class="intro">
+    Após o pagamento de 2000 kz, preencha o formulário para agendar sua consulta digital com a CyberSev.
+  </p>
+
+  <form id="consultaForm">
+
+    <label>
+      Nome completo *
+      <input type="text" id="nome" required minlength="3">
+    </label>
+
+    <label>
+      WhatsApp / Telefone *
+      <input type="tel" id="whatsapp" placeholder="+244 934 000 000" required pattern="^[0-9+()\\s-]{6,20}$">
+    </label>
+
+    <label>
+      Email (opcional)
+      <input type="email" id="email">
+    </label>
+
+    <label>
+      Tipo de consulta *
+      <select id="tipo" required>
+        <option value="">Selecione</option>
+        <option>Criação de Site</option>
+        <option>Loja Digital</option>
+        <option>Marketing Digital</option>
+        <option>Orientação para começar um negocio</option>
+        <option>Consultoria Geral</option>
+      </select>
+    </label>
+
+    <label>
+      Onde deseja ser atendido? *
+      <select id="local" required>
+        <option value="">Selecione</option>
+        <option>WhatsApp</option>
+        <option>Messenger</option>
+      </select>
+    </label>
+
+    <label>
+      Data *
+      <input type="date" id="data" required>
+    </label>
+
+    <label>
+      Horário *
+      <input type="time" id="hora" required>
+    </label>
+
+    <label>
+      Descreva sua necessidade *
+      <textarea id="mensagem" rows="4" required minlength="10"></textarea>
+    </label>
+
+    <button type="submit">Solicitar Consulta</button>
+
+    <div class="aviso">
+      ⏱ A consulta deve ser marcada com no mínimo 5 horas de antecedência.
+    </div>
+
+  </form>
+</main>
+
+<script>
+  function copiarIBAN() {
+  const iban = "AO06 0006 0000 12766453301 75";
+  navigator.clipboard.writeText(iban).then(() => {
+    document.getElementById("msg").style.display = "block";
+    setTimeout(() => {
+      document.getElementById("msg").style.display = "none";
+    }, 2000);
+  });
+}
+document.getElementById("consultaForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const agora = new Date();
+  const dataSelecionada = new Date(
+    document.getElementById("data").value + "T" +
+    document.getElementById("hora").value
+  );
+
+  const diffHoras = (dataSelecionada - agora) / (1000 * 60 * 60);
+
+  if (diffHoras < 5) {
+    alert("⚠️ A consulta deve ser marcada com pelo menos 5 horas de antecedência.");
+    return;
+  }
+
+  const dados =
+`📌 *Nova Consulta Digital - CyberSev*
+
+👤 Nome: ${nome.value}
+📱 Telefone: ${whatsapp.value}
+📧 Email: ${email.value || 'Não informado'}
+
+🛠 Serviço: ${tipo.value}
+📍 Atendimento: ${local.value}
+
+📅 Data: ${data.value}
+⏰ Hora: ${hora.value}
+
+📝 Detalhes:
+${mensagem.value}`;
+
+  const url = "https://wa.me/244934919736?text=" + encodeURIComponent(dados);
+  window.open(url, "_blank");
+});
+</script>
+
+</body>
+</html>

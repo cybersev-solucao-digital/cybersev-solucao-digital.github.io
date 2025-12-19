@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CyberSev Solução Digital | Termos de Uso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Fonte Inter + Ícones (se quiser depois) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- CSS Compartilhado -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">CyberSev Solução Digital</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Termos de Uso</h1>
+
+    <p>Última atualização: 18 de dezembro de 2025</p>
+
+    <h2>1. Aceitação dos Termos</h2>
+    <p>Ao acessar ou utilizar os serviços da <strong>CyberSev Solução Digital</strong>, você concorda integralmente com estes Termos de Uso. Caso não concorde, não utilize nossos serviços.</p>
+
+    <h2>2. Serviços Oferecidos</h2>
+    <p>A CyberSev especializa-se em:</p>
+    <ul>
+      <li>Criação de sites institucionais e promocionais;</li>
+      <li>Desenvolvimento de landing pages para marketing digital;</li>
+      <li>Manutenção e atualização de websites;</li>
+      <li>Consultoria em presença digital.</li>
+    </ul>
+
+    <h2>3. Responsabilidades do Cliente</h2>
+    <ul>
+      <li>Fornecer conteúdo (textos, imagens, logotipos) em formato adequado e com direitos de uso;</li>
+      <li>Validar etapas do projeto dentro do prazo acordado;</li>
+      <li>Realizar pagamentos conforme o cronograma definido em proposta.</li>
+    </ul>
+
+    <h2>4. Propriedade Intelectual</h2>
+    <p>O código-fonte e estrutura técnica do site pertencem à CyberSev até a quitação total do projeto. Após pagamento integral, os direitos são transferidos ao cliente, exceto bibliotecas de terceiros.</p>
+
+    <h2>5. Limitação de Responsabilidade</h2>
+    <p>Não nos responsabilizamos por:</p>
+    <ul>
+      <li>Conteúdo ilegal ou ofensivo inserido pelo cliente;</li>
+      <li>Problemas decorrentes de hospedagem ou domínio não gerenciados por nós;</li>
+      <li>Interrupções em serviços de terceiros (ex: WhatsApp API, Google).</li>
+    </ul>
+
+    <h2>6. Modificações</h2>
+    <p>Reservamo-nos o direito de atualizar estes Termos a qualquer momento. As alterações entrarão em vigor após publicação no site.</p>
+
+    <h2>7. Contato</h2>
+    <p>Para esclarecimentos, entre em contato:</p>
+    <p>
+      <a href="mailto:cybersevsolucaodigital@gmail.com">✉️ cybersevsolucaodigital@gmail.com</a></br>
+    📱 <a href="https://wa.me/244934919736" style="color:#00c6ff">WhatsApp</a></p>
+    <!-- 🔹 Botão Flutuante Marcar Consulta -->
+<a href="consulta.html" id="cybersev-float-btn">
+  Marcar consulta
+</a>
+  </main>
+
+  <footer>
+    <p>CyberSev Solução Digital © 2025</p>
+    <p>Criação de Sites Profissionais</p>
+    <div class="footer-links">
+      <a href="termos.html">Termos de Uso</a>
+      <a href="privacidade.html">Política de Privacidade</a>
+    </div>
+    <div class="contacts">
+      <a href="https://wa.me/244934919736">📱 WhatsApp</a>
+      <a href="mailto:cybersevsolucaodigital@gmail.com">✉️ Email</a>
+      <a href="https://www.facebook.com/profile.php?id=61584367352301" target="_blank">📘 Facebook</a>
+    </div>
+  </footer>
+  <script>
+(function(){
+  const btn = document.getElementById("cybersev-float-btn");
+
+  function mostrarBotao(){
+    btn.classList.add("show");
+
+    // some novamente após 10s (discreto)
+    setTimeout(() => {
+      btn.classList.remove("show");
+    }, 10000);
+  }
+
+  // primeira aparição após 30s
+  setTimeout(mostrarBotao, 30000);
+
+  // reaparece a cada 30s
+  setInterval(mostrarBotao, 30000);
+})();
+</script>
+</body>
+</html>

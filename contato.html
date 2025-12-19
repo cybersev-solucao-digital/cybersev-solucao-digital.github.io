@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CyberSev Solução Digital | Contato</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Fonte Inter + Ícones (se quiser depois) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- CSS Compartilhado -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">CyberSev Solução Digital</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contato Direto</h1>
+
+    <div class="contact-card">
+      <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 1.5rem;">Fale conosco agora mesmo pelo WhatsApp e receba atendimento personalizado.</p>
+      
+      <a href="https://wa.me/244934919736" class="contact-btn">💬 WhatsApp</a></br>
+
+      <div class="links">
+        <a href="mailto:cybersevsolucaodigital@gmail.com">✉️ cybersevsolucaodigital@gmail.com</a></br>
+        <a href="https://www.facebook.com/profile.php?id=61584367352301" target="_blank">📘 Facebook</a>
+      </div>
+    </div>
+
+    <!-- Formulário opcional -->
+    <div style="background: var(--card-bg); border-radius: 16px; padding: 2rem; margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+      <h3 style="margin-bottom: 1.2rem;">Ou envie sua mensagem:</h3>
+      <form onsubmit="enviarWhatsApp(event)">
+        <input type="text" name="nome" placeholder="Seu nome" required
+               style="width: 100%; padding: 0.9rem; margin-bottom: 1rem; border-radius: 8px; border: 1px solid #333; background: #151525; color: white;">
+        <input type="email" name="email" placeholder="Seu e-mail" required
+               style="width: 100%; padding: 0.9rem; margin-bottom: 1rem; border-radius: 8px; border: 1px solid #333; background: #151525; color: white;">
+        <textarea name="mensagem" rows="4" placeholder="Sua mensagem" required
+                  style="width: 100%; padding: 0.9rem; margin-bottom: 1.2rem; border-radius: 8px; border: 1px solid #333; background: #151525; color: white; resize: vertical;"></textarea>
+        <button type="submit" class="contact-btn" style="width: auto; padding: 0.9rem 2rem;">Enviar Mensagem</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>CyberSev Solução Digital © 2025</p>
+    <p>Criação de Sites Profissionais</p>
+    <div class="footer-links">
+      <a href="termos.html">Termos de Uso</a>
+      <a href="privacidade.html">Política de Privacidade</a>
+    </div>
+    <div class="contacts">
+      <a href="https://wa.me/244934919736">📱 WhatsApp</a>
+      <a href="mailto:cybersevsolucaodigital@gmail.com">✉️ Email</a>
+      <a href="https://www.facebook.com/profile.php?id=61584367352301" target="_blank">📘 Facebook</a>
+    </div>
+  </footer>
+  <script>
+function enviarWhatsApp(event) {
+  event.preventDefault();
+
+  const nome = document.querySelector('input[name="nome"]').value;
+  const email = document.querySelector('input[name="email"]').value;
+  const mensagem = document.querySelector('textarea[name="mensagem"]').value;
+
+  const texto = 
+    `Olá, meu nome é ${nome}.\n\n` +
+    `Email: ${email}\n\n` +
+    `Mensagem:\n${mensagem}`;
+
+  const numero = "244934919736";
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+
+  window.open(url, "_blank");
+}
+</script>
+</body>
+</html>
