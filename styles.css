@@ -1,18 +1,20 @@
-/* 🌌 CYBERSEV NEO — v2.0 | Premium Cyber Aesthetic */
+/* 🌌 CYBERSEV NEO — v3.0 | Neon Galaxy Edition */
 /* Mobile-first, performático, sem bibliotecas pesadas */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
 
 :root {
-  --bg: #10a;
-  --bg-deep: #040307;
-  --surface: rgba(22, 19, 32, 0.75);
-  --surface-hover: rgba(32, 28, 46, 0.9);
-  --text: #f0edff;
+  --bg: #999200; /* Fundo escuro profundo */
+  --bg-deep: #000000;
+  --surface: rgba(15, 10, 40, 0.7); /* Roxo escuro translúcido */
+  --surface-hover: rgba(25, 15, 60, 0.9);
+  --text: #ffffff;
   --text-muted: #b8b2d9;
-  --accent: #c4a7e7;     /* ✅ Lavanda nobre — elegante, rara, serena */
-  --accent-secondary: #9ccfdf; /* ✅ Azul-poeira — suave, harmonioso */
-  --neon-glow: 0 0 14px rgba(196, 167, 231, 0.25), 0 0 28px rgba(196, 167, 231, 0.07);
+  --accent: #00eaff;     /* Ciano neon */
+  --accent-secondary: #ff6b6b; /* Rosa neon */
+  --accent-tertiary: #ffcc00;  /* Amarelo solar */
+  --neon-glow: 0 0 12px rgba(0, 234, 255, 0.4), 0 0 24px rgba(255, 107, 107, 0.3);
   --transition-fast: all 0.3s ease;
   --transition: all 0.4s ease;
   --border-radius: 20px;
@@ -40,20 +42,20 @@ body {
   position: relative;
 }
 
-/* 🌠 Fundo estrelado sutil (CSS-only) */
+/* 🌠 Fundo cósmico com nebulosas e estrelas */
 body::before {
   content: '';
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
   background:
-    radial-gradient(circle at 20% 30%, rgba(0, 150, 255, 0.03) 0%, transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(126, 0, 255, 0.03) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(0, 255, 200, 0.02) 0%, transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(0, 234, 255, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255, 107, 107, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(255, 204, 0, 0.03) 0%, transparent 50%);
   pointer-events: none;
   z-index: -2;
 }
 
-/* ✦ Estrelas animadas (CSS-only, leve) */
+/* ✦ Estrelas animadas + partículas flutuantes */
 body::after {
   content: '';
   position: fixed;
@@ -73,6 +75,161 @@ body::after {
 @keyframes twinkle {
   0%, 100% { opacity: 0.2; }
   50% { opacity: 0.5; }
+}
+
+/* === Hero Section Visual — Neon Galaxy Style === */
+.hero {
+  position: relative;
+  padding: 80px 20px 60px;
+  text-align: center;
+  background: linear-gradient(135deg, #0a0515, #1a0a30);
+  color: white;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='%23000' opacity='0.1'/%3E%3C/svg%3E") repeat;
+  z-index: -1;
+}
+
+.hero-logo {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(90deg, #00eaff, #ff6b6b, #ffcc00, #00eaff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+  animation: shine 4s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0%, 100% { background-position: 200% 0; }
+  50% { background-position: -100% 0; }
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #ffcc00;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+  font-family: 'Orbitron', sans-serif;
+}
+
+.hero-slogan {
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  font-weight: 900;
+  margin: 30px auto 40px;
+  max-width: 800px;
+  background: linear-gradient(90deg, #fff, #00eaff, #ff6b6b, #ffcc00, #fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 20px rgba(0, 234, 255, 0.3);
+  font-family: 'Orbitron', sans-serif;
+}
+
+.services-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.service-icon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(25, 15, 60, 0.6);
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  border: 1px solid rgba(0, 234, 255, 0.2);
+}
+
+.service-icon-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 234, 255, 0.3), 0 0 20px rgba(255, 107, 107, 0.2);
+}
+
+.service-icon-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 0 8px rgba(0, 234, 255, 0.5));
+}
+
+.service-icon-card h3 {
+  font-size: 0.95rem;
+  text-align: center;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.4;
+  font-family: 'Inter', sans-serif;
+}
+
+.hero-rocket {
+  position: relative;
+  margin: 50px auto;
+  width: 300px;
+  height: 300px;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.hero-footer-slogan {
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  font-weight: 800;
+  color: #00eaff;
+  margin: 40px auto 30px;
+  max-width: 700px;
+  text-shadow: 0 0 15px rgba(0, 234, 255, 0.4);
+  font-family: 'Orbitron', sans-serif;
+}
+
+.contact-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  margin-top: 30px;
+  border: 1px solid rgba(0, 234, 255, 0.2);
+}
+
+.contact-bar img {
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(0 0 5px rgba(0, 234, 255, 0.5));
+}
+
+.contact-bar span {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #ffcc00;
+  text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+  font-family: 'Orbitron', sans-serif;
 }
 
 /* === Cabeçalho Holográfico === */
@@ -98,7 +255,7 @@ header::before {
   top: 0; left: 0; right: 0; bottom: 0;
   border-radius: 12px;
   padding: 1px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-secondary), #00ffaa);
+  background: linear-gradient(90deg, var(--accent), var(--accent-secondary), var(--accent-tertiary));
   -webkit-mask: 
     linear-gradient(#fff 0 0) content-box, 
     linear-gradient(#fff 0 0);
@@ -118,12 +275,9 @@ header::before {
   background-clip: text;
   color: transparent;
   animation: shine 4s ease-in-out infinite;
+  font-family: 'Orbitron', sans-serif;
 }
 
-@keyframes shine {
-  0%, 100% { background-position: 200% 0; }
-  50% { background-position: -100% 0; }
-}
 nav ul {
   display: flex;
   gap: 1.4rem;
@@ -138,6 +292,7 @@ nav a {
   position: relative;
   padding: 0.4rem 0;
   transition: var(--transition-fast);
+  font-family: 'Inter', sans-serif;
 }
 
 nav a:hover {
@@ -174,10 +329,12 @@ h1 {
   font-weight: 900;
   line-height: 1.1;
   margin: 0 0 1.5rem;
-  background: linear-gradient(90deg, #fff, var(--accent), #e0f0ff);
+  background: linear-gradient(90deg, #fff, var(--accent), var(--accent-secondary), #fff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  text-shadow: 0 0 10px rgba(0, 234, 255, 0.3);
+  font-family: 'Orbitron', sans-serif;
 }
 
 h2 {
@@ -186,6 +343,7 @@ h2 {
   margin: 3rem 0 1.8rem;
   color: var(--accent);
   position: relative;
+  font-family: 'Orbitron', sans-serif;
 }
 
 h2::before {
@@ -204,6 +362,7 @@ h3 {
   font-size: 1.35rem;
   margin: 1.2rem 0 0.8rem;
   color: #e0e8ff;
+  font-family: 'Inter', sans-serif;
 }
 
 p {
@@ -211,6 +370,7 @@ p {
   margin-bottom: 1.4rem;
   font-size: 1.05rem;
   max-width: 700px;
+  font-family: 'Inter', sans-serif;
 }
 
 /* === Cyber-Neon Button === */
@@ -235,6 +395,7 @@ p {
   min-height: 56px;
   min-width: 200px;
   text-align: center;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .btn::before {
@@ -352,6 +513,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
+  font-family: 'Inter', sans-serif;
 }
 
 .footer-links a:hover,
@@ -382,16 +544,19 @@ footer {
     opacity: 0.3;
   }
 }
-  .cybersev-showcase {
-  background: #050b14;
+
+/* === CyberSev Showcase (Slider) === */
+.cybersev-showcase {
+  background: #0a0515;
   padding: 90px 20px;
   text-align: center;
 }
 
 .cybersev-showcase-title {
-  color: #00cfff;
+  color: #00eaff;
   font-size: 2.3rem;
   margin-bottom: 60px;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .cybersev-showcase-slider {
@@ -401,6 +566,7 @@ footer {
   margin: auto;
   overflow: visible;
 }
+
 /* Base do cartão */
 .cybersev-card {
   position: absolute;
@@ -460,16 +626,19 @@ footer {
   font-size: 0.9rem;
   opacity: 0.9;
 }
+
+/* === CyberSev Services Grid === */
 .cybersev-services {
-  background: #050b14;
+  background: #0a0515;
   padding: 80px 20px;
 }
 
 .cybersev-services-title {
   text-align: center;
-  color: #00cfff;
+  color: #00eaff;
   font-size: 2.2rem;
   margin-bottom: 60px;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .cybersev-services-grid {
@@ -485,38 +654,46 @@ footer {
   border-radius: 20px;
   color: #fff;
   transition: transform .4s, box-shadow .4s;
+  background: rgba(25, 15, 60, 0.5);
+  border: 1px solid rgba(0, 234, 255, 0.2);
 }
 
 .cybersev-service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(0, 207, 255, 0.4);
+  box-shadow: 0 0 25px rgba(0, 207, 255, 0.4), 0 0 20px rgba(255, 107, 107, 0.2);
 }
 
 .cybersev-service-card h3 {
   margin-bottom: 12px;
   font-size: 1.3rem;
+  color: #00eaff;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .cybersev-service-card p {
   font-size: .95rem;
   margin-bottom: 15px;
+  font-family: 'Inter', sans-serif;
 }
 
 .cybersev-service-card strong {
   display: block;
   font-size: 1.2rem;
   margin-bottom: 18px;
-  color: #00eaff;
+  color: #ffcc00;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .cybersev-service-card a {
   display: inline-block;
   padding: 10px 22px;
   border-radius: 30px;
-  background: #00cfff;
+  background: linear-gradient(90deg, #00eaff, #ff6b6b);
   color: #000;
   font-weight: bold;
   text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.3);
 }
 
 /* Destaques individuais */
@@ -532,13 +709,15 @@ footer {
   background: linear-gradient(135deg, #1f1c2c, #928dab);
 }
 a {
-  color: #00cfff;
+  color: #00eaff;
+  font-family: 'Inter', sans-serif;
 }
+
 /* === CyberSev Modal (overlay leve) === */
 #cybersev-modal-overlay{
   position:fixed;
   inset:0;
-  background:rgba(5,10,30,.45); /* 🔑 MAIS TRANSPARENTE */
+  background:rgba(5,10,30,.45);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -574,6 +753,7 @@ a {
   font-size:1.6rem;
   color:#00eaff;
   margin-bottom:15px;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .cybersev-modal p{
@@ -581,6 +761,7 @@ a {
   line-height:1.6;
   color:#d4dcff;
   margin-bottom:25px;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Botão principal */
@@ -588,11 +769,13 @@ a {
   display:inline-block;
   padding:14px 28px;
   border-radius:40px;
-  background:linear-gradient(135deg,#00eaff,#00ff9c);
+  background:linear-gradient(135deg,#00eaff,#ff6b6b);
   color:#001018;
   font-weight:800;
   text-decoration:none;
   transition:.3s;
+  font-family: 'Orbitron', sans-serif;
+  box-shadow: 0 0 15px rgba(0, 234, 255, 0.3);
 }
 
 .cybersev-modal-btn:hover{
@@ -616,6 +799,7 @@ a {
 .cybersev-modal-close:hover{
   opacity:1;
 }
+
 /* === Botão flutuante CyberSev === */
 #cybersev-float-btn{
   position:fixed;
@@ -623,7 +807,7 @@ a {
   right:24px;
   padding:12px 22px;
   border-radius:40px;
-  background:linear-gradient(135deg,#00eaff,#00ff9c);
+  background:linear-gradient(135deg,#00eaff,#ff6b6b);
   color:#001018;
   font-weight:800;
   font-size:.95rem;
@@ -634,6 +818,7 @@ a {
   transform:translateY(20px);
   transition:.4s ease;
   z-index:9998;
+  font-family: 'Orbitron', sans-serif;
 }
 
 /* visível */
