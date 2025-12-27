@@ -1,0 +1,16 @@
+{
+  "name": "CyberSev Solução Digital",
+  "short_name": "CyberSev",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0f1a",
+  "theme_color": "#0b0f1a",
+  "description": "Soluções digitais profissionais",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
