@@ -218,6 +218,7 @@ body{
   transform:translateY(0);
 }
 .logo-site{
-  width:90px;
+  max-width:100%;
+  height:auto;
   margin-bottom:20px;
 }
