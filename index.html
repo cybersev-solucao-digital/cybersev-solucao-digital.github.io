@@ -1,222 +1,194 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CyberSev Solução Digital | Home</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Fonte Inter + Ícones (se quiser depois) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>CyberSev Solução Digital | Sites Profissionais & Identidade Digital</title>
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="apple-touch-icon" href="logo.png">
+<!-- Open Graph / Facebook / WhatsApp -->
+<meta property="og:title" content="CyberSev Solução Digital">
+<meta property="og:description" content="Soluções digitais profissionais: criação de sites, landing pages e identidade digital.">
+<meta property="og:image" content="https://cybersev-solucao-digital.github.io/index.html/logo.png">
+<meta property="og:url" content="https://cybersev-solucao-digital.github.io/index.html">
+<meta property="og:type" content="website">
 
-<!-- CSS Compartilhado -->
-<link rel="stylesheet" href="styles.css">
+<meta name="theme-color" content="#0b0f1a">
+  <!-- SEO -->
+  <meta name="description" content="CyberSev Solução Digital cria sites profissionais, landing pages, logotipos e presença digital completa. Design tecnológico, persuasivo e confiável.">
+  <meta name="keywords" content="criação de sites Angola, web design profissional, landing page Angola, identidade digital, CyberSev">
+  <meta name="author" content="CyberSev Solução Digital">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">CyberSev Solução Digital</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- MENU HAMBURGER -->
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-  <main>
-   <section class="cybersev-showcase">
-  <h2 class="cybersev-showcase-title">Tipos de Sites que Criamos</h2>
-<!-- 🔹 CyberSev Modal Consulta -->
-<div id="cybersev-modal-overlay">
-  <div class="cybersev-modal">
-
-    <button class="cybersev-modal-close" aria-label="Fechar">&times;</button>
-
-    <h2>O mundo digital não espera</h2>
-
-    <p>
-      Negócios que crescem não dependem de sorte — dependem de
-      <strong>estratégia</strong>, <strong>presença digital</strong> e
-      <strong>decisões inteligentes</strong>.
-      <br><br>
-      Uma consulta certa hoje pode evitar erros caros amanhã.
-    </p>
-
-    <a href="consulta.html" class="cybersev-modal-btn">
-      Marcar consulta agora
-    </a>
-
-  </div>
-</div>
-  <div class="cybersev-showcase-slider">
-
-    <div class="cybersev-card cybersev-card-1 active">
-      <h3>Sites Institucionais</h3>
-      <p>Credibilidade, autoridade e presença profissional online.</p>
-      <span>Empresas • Escritórios • Serviços</span>
-    </div>
-
-    <div class="cybersev-card cybersev-card-2">
-      <h3>Negócios Locais</h3>
-      <p>Atraia clientes da sua região com estratégia digital.</p>
-      <span>Restaurantes • Salões • Oficinas</span>
-    </div>
-
-    <div class="cybersev-card cybersev-card-3">
-      <h3>Lojas Virtuais</h3>
-      <p>Venda online com design moderno e segurança.</p>
-      <span>E-commerce • Pagamentos • Carrinho</span>
-    </div>
-
-    <div class="cybersev-card cybersev-card-4">
-      <h3>Landing Pages</h3>
-      <p>Páginas criadas para conversão e vendas.</p>
-      <span>Marketing • Leads • Anúncios</span>
-    </div>
-
-    <div class="cybersev-card cybersev-card-5">
-      <h3>Blogs & Portais</h3>
-      <p>Autoridade digital e crescimento orgânico.</p>
-      <span>SEO • Conteúdo • Tráfego</span>
-    </div>
-
-    <div class="cybersev-card cybersev-card-6">
-      <h3>Sites Personalizados</h3>
-      <p>Projetos únicos, feitos sob medida.</p>
-      <span>Startups • Ideias Exclusivas</span>
-    </div>
-
-  </div>
-  <!-- 🔹 Botão Flutuante Ver Serviços -->
-<a href="servicos.html" id="cybersev-servicos-btn">
-  Ver serviços
+<nav class="sidebar" id="sidebar">
+  <a href="#inicio" onclick="toggleMenu()">Início</a>
+  <a href="#servicos" onclick="toggleMenu()">Serviços</a>
+  <a href="#precos" onclick="toggleMenu()">Ver Preços</a>
+<a href="consulta.html">Marcar Consulta</a>
+  <a href="#contato" onclick="toggleMenu()">Contato</a>
+</nav>
+<a href="consulta.html" class="consulta-btn" id="consultaBtn">
+  Marcar Consulta Online<br>
+  <span>com a CyberSev</span>
 </a>
+<!-- HEADER -->
+<header class="hero" id="inicio">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <img src="logo.png" alt="CyberSev Solução Digital" class="logo-site">
+    <h1>CyberSev<br><span>Solução Digital</span></h1>
+    <p>
+      Criamos experiências digitais que transformam negócios comuns  
+      em marcas profissionais, confiáveis e memoráveis.
+    </p>
+    <a href="#servicos" class="btn-primary">Conhecer Serviços</a>
+  </div>
+</header>
+
+<!-- SOBRE -->
+<section class="section about">
+  <div class="container">
+    <h2>Autoridade Digital Começa Aqui</h2>
+    <p>
+      A <strong>CyberSev Solução Digital</strong> nasce com um objetivo claro:
+      elevar empreendedores, projetos e empresas do nível amador
+      para um posicionamento digital profissional, sólido e competitivo.
+    </p>
+    <p>
+      Não criamos apenas sites. Criamos <strong>presença, credibilidade e conversão</strong>.
+    </p>
+  </div>
 </section>
 
-    <section class="section">
-      <h2>Sites Pensados para Marketing</h2>
-      <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; opacity: 0.85;">
-        Cada site é construído com foco em conversão: formulários otimizados, velocidade extrema, estrutura SEO e integração com WhatsApp, redes sociais e Google Analytics.
-      </p>
-    </section>
+<!-- SERVIÇOS -->
+<section id="servicos" class="section services">
+  <div class="container">
+    <h2>Soluções Digitais Estratégicas</h2>
 
-    <section class="section">
-      <h2>Por que escolher a CyberSev?</h2>
-      <div class="features">
-        <div class="card">
-          <h3>Design Premium</h3>
-          <p>Visual moderno, animações suaves e UX intuitiva.</p>
-        </div>
-        <div class="card">
-          <h3>Entrega Rápida</h3>
-          <p>O projecto é entregue no intervalo de 12 à 72 horas.</br> Dependendo da solicitação, pode demorar semanas se for um grande projecto.</p>
-        </div>
-        <div class="card">
-          <h3>Suporte Contínuo</h3>
-          <p>Ajuda pós-entrega e atualizações sem complicação.</p>
-        </div>
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Criação de Sites">
+        <h3>Criação de Sites Profissionais</h3>
+        <p>
+          Sites rápidos, responsivos e otimizados para gerar confiança,
+          autoridade e resultados reais no Google e nas redes sociais.
+        </p>
       </div>
-    </section>
 
-    <div style="text-align: center; margin-top: 3rem;">
-      <a href="https://wa.me/244934919736" class="btn">Solicitar Site Agora</a>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Landing Pages">
+        <h3>Landing Pages de Conversão</h3>
+        <p>
+          Páginas estratégicas focadas em transformar visitantes
+          em contactos, clientes e oportunidades.
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1507209696998-3c532be9b2b5" alt="Identidade Digital">
+        <h3>Identidade Digital Completa</h3>
+        <p>
+          Logotipo, layout, estrutura visual e posicionamento
+          profissional para destacar sua marca no mercado.
+        </p>
+      </div>
     </div>
-    <!-- 🔹 Botão Flutuante Marcar Consulta -->
-<a href="consulta.html" id="cybersev-float-btn">
-  Marcar consulta
-</a>
-  </main>
+  </div>
+</section>
 
-  <footer>
-    <p>CyberSev Solução Digital © 2025</p>
-    <p>Criação de Sites Profissionais</p>
-    <div class="footer-links">
-      <a href="termos.html">Termos de Uso</a>
-      <a href="privacidade.html">Política de Privacidade</a>
+<!-- DIFERENCIAL -->
+<section class="section diferencial">
+  <div class="container">
+    <h2>Por Que Escolher a CyberSev?</h2>
+    <ul>
+      <li>✔ Design tecnológico, limpo e profissional</li>
+      <li>✔ Conteúdo persuasivo que prende o visitante</li>
+      <li>✔ SEO real, não apenas aparência</li>
+      <li>✔ Estrutura pensada para crescer</li>
+      <li>✔ Responsivo em celular, tablet e computador</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta">
+  <div class="container">
+    <h2>O Seu Projeto Merece um Nível Profissional</h2>
+    <p>
+      Se você quer parar de perder oportunidades e
+      começar a transmitir confiança desde o primeiro clique,
+      este é o momento.
+    </p>
+    <a href="https://wa.me/244934919736" class="btn-secondary">Solicitar Orçamento</a>
+  </div>
+</section>
+<section class="section services" id="precos">
+  <div class="container">
+    <h2>Planos e Preços</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
+        <h3>Landing Page Profissional</h3>
+        <p>
+          Página focada em conversão, ideal para divulgar serviços,
+          campanhas e captar clientes rapidamente.
+        </p>
+        <strong>10.000 Kz</strong><br><br>
+        <a class="btn-primary" href="https://wa.me/244934919736">Solicitar</a>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93">
+        <h3>Site Profissional</h3>
+        <p>
+          Site completo com várias seções, design moderno,
+          SEO e presença digital sólida.
+        </p>
+        <strong>30.000 Kz</strong><br><br>
+        <a class="btn-primary" href="https://wa.me/244934919736">Solicitar</a>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+        <h3>Site Premium Completo</h3>
+        <p>
+          Projeto avançado com identidade digital,
+          copywriting persuasivo, página de login, integração com Banco de Dados, dominio icluido e estrutura empresarial.
+        </p>
+        <strong>150.000 Kz</strong><br><br>
+        <a class="btn-primary" href="https://wa.me/244934919736">Solicitar</a>
+      </div>
+
     </div>
-    <div class="contacts">
-      <a href="https://wa.me/244934919736">📱 WhatsApp</a>
-      <a href="mailto:cybersevsolucaodigital@gmail.com">✉️ Email</a>
-      <a href="https://www.facebook.com/profile.php?id=61584367352301" target="_blank">📘 Pagina do Facebook</a>
-    </div>
-  </footer>
-  <script>
-(function(){
-  const btn = document.getElementById("cybersev-float-btn");
+  </div>
+</section>
+<section class="section" id="contato">
+  <div class="container">
+    <h2>Contato</h2>
 
-  function mostrarBotao(){
-    btn.classList.add("show");
+    <input type="text" id="nome" placeholder="Seu nome" required><br><br>
+    <textarea id="mensagem" placeholder="Escreva sua mensagem"></textarea><br><br>
 
-    // some novamente após 10s (discreto)
-    setTimeout(() => {
-      btn.classList.remove("show");
-    }, 10000);
-  }
+    <button class="btn-primary" onclick="enviarWhats()">Enviar no WhatsApp</button>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2025 CyberSev Solução Digital • Todos os direitos reservados</p>
+</footer>
 
-  // primeira aparição após 30s
-  setTimeout(mostrarBotao, 30000);
-
-  // reaparece a cada 30s
-  setInterval(mostrarBotao, 30000);
-})();
-(function () {
-  const cards = document.querySelectorAll('.cybersev-card');
-  const slider = document.querySelector('.cybersev-showcase-slider');
-
-  let index = 0;
-  let intervalId = null;
-  const delay = 4500;
-
-  function showNext() {
-    cards[index].classList.remove('active');
-    index = (index + 1) % cards.length;
-    cards[index].classList.add('active');
-  }
-
-  function startSlider() {
-    if (intervalId === null) {
-      intervalId = setInterval(showNext, delay);
-    }
-  }
-
-  function stopSlider() {
-    if (intervalId !== null) {
-      clearInterval(intervalId);
-      intervalId = null;
-    }
-  }
-
-  /* ===== PAUSA AO PRESSIONAR (MÉTODO CORRETO) ===== */
-  slider.addEventListener('pointerdown', () => {
-    stopSlider();
-  });
-
-  slider.addEventListener('pointerup', () => {
-    startSlider();
-  });
-
-  slider.addEventListener('pointerleave', () => {
-    startSlider();
-  });
-
-  slider.addEventListener('pointercancel', () => {
-    startSlider();
-  });
-(function(){
-  const modal = document.getElementById("cybersev-modal-overlay");
-  const closeBtn = document.querySelector(".cybersev-modal-close");
-
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-})();
-  /* Inicializa */
-  startSlider();
-})();
-</script>
+<script src="script.js"></script>
 </body>
 </html>
