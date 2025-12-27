@@ -1,120 +1,263 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CyberSev Solução Digital | Política de Privacidade</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
- 
- <!-- Fonte Inter + Ícones (se quiser depois) -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>CyberSev Solução Digital | Política de Privacidade</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- CSS Compartilhado -->
-<link rel="stylesheet" href="styles.css">
+<style>
+:root{
+  --bg:#0b0f1a;
+  --card:#11172a;
+  --primary:#00c6ff;
+  --text:#e6e9f0;
+  --muted:#9aa3b2;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:linear-gradient(180deg,#0b0f1a,#070b14);
+  color:var(--text);
+  line-height:1.7;
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 6%;
+  background:rgba(11,15,26,.9);
+  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:700;
+  color:var(--primary);
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:24px;
+}
+
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  font-weight:500;
+}
+
+nav a:hover{
+  color:var(--primary);
+}
+
+/* MAIN */
+main{
+  max-width:900px;
+  margin:60px auto;
+  padding:0 6%;
+}
+
+main h1{
+  font-size:36px;
+  margin-bottom:10px;
+}
+
+main h2{
+  margin-top:40px;
+  font-size:22px;
+  color:var(--primary);
+}
+
+main p{
+  margin:14px 0;
+  color:var(--muted);
+}
+
+main ul{
+  margin-left:20px;
+  margin-top:10px;
+}
+
+main li{
+  margin-bottom:8px;
+}
+
+/* LINKS */
+a{
+  color:var(--primary);
+  text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+  background:#070b14;
+  padding:40px 6%;
+  margin-top:80px;
+  text-align:center;
+}
+
+footer p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.footer-links,
+.contacts{
+  margin-top:15px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+/* BOTÃO FLUTUANTE */
+#cybersev-float-btn{
+  position:fixed;
+  bottom:30px;
+  right:25px;
+  background:linear-gradient(135deg,#00c6ff,#0072ff);
+  color:#fff;
+  padding:12px 18px;
+  border-radius:50px;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,198,255,.35);
+  opacity:0;
+  transform:translateY(30px);
+  transition:all .6s ease;
+  z-index:999;
+}
+
+#cybersev-float-btn.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+#cybersev-float-btn:hover{
+  transform:scale(1.05);
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+  header{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  main h1{
+    font-size:28px;
+  }
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="logo">CyberSev Solução Digital</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <h1>Política de Privacidade</h1>
-
-    <p>Última atualização: 18 de dezembro de 2025</p>
-
-    <h2>1. Coleta de Dados</h2>
-    <p>Coletamos apenas as informações necessárias para prestação dos serviços:</p>
+<header>
+  <div class="logo">CyberSev Solução Digital</div>
+  <nav>
     <ul>
-      <li>Nome e e-mail (via formulário ou WhatsApp);</li>
-      <li>Telefone (para contato direto);</li>
-      <li>Conteúdo enviado pelo cliente (textos, imagens);</li>
-      <li>Dados técnicos (IP, dispositivo) apenas para análise de desempenho do site — sem identificação pessoal.</li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#precos">serviços</a></li>
+      <li><a href="index.html#contato">Contato</a></li>
     </ul>
+  </nav>
+</header>
 
-    <h2>2. Uso das Informações</h2>
-    <p>Seus dados são utilizados exclusivamente para:</p>
-    <ul>
-      <li>Comunicação sobre o projeto;</li>
-      <li>Envio de propostas e atualizações;</li>
-      <li>Criação e entrega do site contratado;</li>
-      <li>Cumprimento de obrigações legais.</li>
-    </ul>
-    <p><strong>Não vendemos, alugamos ou compartilhamos seus dados com terceiros.</strong></p>
+<main>
+<h1>Política de Privacidade</h1>
+<p>Última atualização: 18 de dezembro de 2025</p>
 
-    <h2>3. Proteção dos Dados</h2>
-    <p>Adotamos medidas técnicas e organizacionais para proteger suas informações:</p>
-    <ul>
-      <li>Comunicação via WhatsApp (criptografada de ponta a ponta);</li>
-      <li>Armazenamento local seguro (sem nuvem pública exposta);</li>
-      <li>Acesso restrito aos dados por equipe autorizada.</li>
-    </ul>
+<h2>1. Coleta de Dados</h2>
+<p>Coletamos apenas informações necessárias para prestação dos serviços:</p>
+<ul>
+<li>Nome e e-mail;</li>
+<li>Telefone;</li>
+<li>Conteúdo enviado pelo cliente;</li>
+<li>Dados técnicos básicos (sem identificação pessoal).</li>
+</ul>
 
-    <h2>4. Direitos do Titular</h2>
-    <p>Você pode, a qualquer momento:</p>
-    <ul>
-      <li>Solicitar acesso aos dados armazenados;</li>
-      <li>Pedir correção ou exclusão;</li>
-      <li>Revogar o consentimento para uso dos dados.</li>
-    </ul>
-    <p>Basta entrar em contato pelo e-mail abaixo.</p>
+<h2>2. Uso das Informações</h2>
+<ul>
+<li>Comunicação sobre projetos;</li>
+<li>Envio de propostas;</li>
+<li>Entrega dos serviços contratados;</li>
+<li>Cumprimento legal.</li>
+</ul>
+<p><strong>Não vendemos nem compartilhamos dados.</strong></p>
 
-    <h2>5. Cookies</h2>
-    <p>Nosso site NÃO utiliza cookies de rastreamento, publicidade ou analytics. Pode usar apenas cookies técnicos essenciais (ex: preferência de tema), sem coleta de identificação.</p>
+<h2>3. Proteção dos Dados</h2>
+<ul>
+<li>Comunicação segura;</li>
+<li>Armazenamento protegido;</li>
+<li>Acesso restrito.</li>
+</ul>
 
-    <h2>6. Contato</h2>
-    <p>Dúvidas ou solicitações sobre privacidade:</p>
-    <p>
-        <a href="mailto:cybersevsolucaodigital@gmail.com">✉️ cybersevsolucaodigital@gmail.com</a></br>
-    📱 <a href="https://wa.me/244934919736" style="color:#00c6ff">WhatsApp</a></p>
-    <!-- 🔹 Botão Flutuante Marcar Consulta -->
-<a href="consulta.html" id="cybersev-float-btn">
-  Marcar consulta
-</a>
-  </main>
+<h2>4. Direitos do Usuário</h2>
+<ul>
+<li>Acesso aos dados;</li>
+<li>Correção ou exclusão;</li>
+<li>Revogação do consentimento.</li>
+</ul>
 
-  <footer>
-    <p>CyberSev Solução Digital © 2025</p>
-    <p>Criação de Sites Profissionais</p>
-    <div class="footer-links">
-      <a href="termos.html">Termos de Uso</a>
-      <a href="privacidade.html">Política de Privacidade</a>
-    </div>
-    <div class="contacts">
-      <a href="https://wa.me/244934919736">📱 WhatsApp</a>
-      <a href="mailto:cybersevsolucaodigital@gmail.com">✉️ Email</a>
-      <a href="https://www.facebook.com/profile.php?id=61584367352301" target="_blank">📘 Facebook</a>
-    </div>
-  </footer>
-  <script>
+<h2>5. Cookies</h2>
+<p>Não utilizamos cookies de rastreamento ou publicidade.</p>
+
+<h2>6. Contato</h2>
+<p>
+✉️ <a href="mailto:cybersevsolucaodigital@gmail.com">cybersevsolucaodigital@gmail.com</a><br>
+📱 <a href="https://wa.me/244934919736">WhatsApp</a>
+</p>
+
+<a href="consulta.html" id="cybersev-float-btn">Marcar consulta</a>
+</main>
+
+<footer>
+<p>CyberSev Solução Digital © 2025</p>
+<p>Criação de Sites Profissionais</p>
+
+<div class="footer-links">
+<a href="termos.html">Termos de Uso</a>
+<a href="privacidade.html">Política de Privacidade</a>
+</div>
+
+<div class="contacts">
+<a href="https://wa.me/244934919736">📱 WhatsApp</a>
+<a href="mailto:cybersevsolucaodigital@gmail.com">✉️ Email</a>
+<a href="https://www.facebook.com/profile.php?id=61584367352301" target="_blank">📘 Facebook</a>
+</div>
+</footer>
+
+<script>
 (function(){
   const btn = document.getElementById("cybersev-float-btn");
 
-  function mostrarBotao(){
+  function mostrar(){
     btn.classList.add("show");
-
-    // some novamente após 10s (discreto)
-    setTimeout(() => {
-      btn.classList.remove("show");
-    }, 10000);
+    setTimeout(()=>btn.classList.remove("show"),10000);
   }
 
-  // primeira aparição após 30s
-  setTimeout(mostrarBotao, 30000);
-
-  // reaparece a cada 30s
-  setInterval(mostrarBotao, 30000);
+  setTimeout(mostrar,30000);
+  setInterval(mostrar,30000);
 })();
 </script>
+
 </body>
 </html>
