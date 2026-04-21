@@ -229,7 +229,7 @@ footer{background:var(--g);padding:clamp(44px,6vw,76px) 0 0;}
 <div class="drw" id="drw">
   <a href="#catalogo" onclick="cD()">📚 Biblioteca</a>
   <a href="#porque" onclick="cD()">⭐ Porquê Nós</a>
-  <a href="#depoimentos" onclick="cD()">💬 Depoimentos</a>
+  <a href="#depoimentos" onclick="cD();setTimeout(()=>{document.getElementById('depoimentos').scrollIntoView({behavior:'smooth'})},300)">💬 Depoimentos</a>
   <a href="https://wa.me/244959622160" target="_blank">📲 +244 959 622 160</a>
 </div>
 
@@ -327,18 +327,86 @@ footer{background:var(--g);padding:clamp(44px,6vw,76px) 0 0;}
   </div>
 </div></section>
 
-<!-- TESTIMONIALS -->
 <section id="depoimentos"><div class="wrap">
   <div class="sh center">
     <div class="sh-ey">Depoimentos</div>
     <h2>O que dizem os <em>produtores</em></h2>
     <p>Resultados reais de produtores angolanos que aplicaram o conhecimento dos manuais CyberSev.</p>
   </div>
-  <div class="tg">
-    <div class="tc"><span class="tq">"</span><div class="ts"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tt">Comprei o guia de frango de corte e apliquei as técnicas de alimentação por fase. A mortalidade baixou de 12% para menos de 3%. Foi o melhor investimento que fiz na avicultura.</p><div class="ta"><div class="tav">M</div><div><div class="tn">Manuel K.</div><div class="tr">Avicultor · Huambo</div></div></div></div>
-    <div class="tc"><span class="tq">"</span><div class="ts"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tt">O guia de tomate mudou a minha forma de trabalhar. Aprendi a fazer mudas em viveiro e a controlar a requeima. A minha produção triplicou na segunda campanha.</p><div class="ta"><div class="tav">F</div><div><div class="tn">Filomena N.</div><div class="tr">Agricultora · Malanje</div></div></div></div>
-    <div class="tc"><span class="tq">"</span><div class="ts"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tt">Nunca pensei que criar suínos podia ser tão organizado. O manual explica desde a pocilga até à comercialização. Tenho agora 40 suínos e clientes fixos em Luanda.</p><div class="ta"><div class="tav">J</div><div><div class="tn">João P.</div><div class="tr">Suinocultor · Kwanza Sul</div></div></div></div>
+
+  <!-- ÁUDIOS -->
+  <div style="margin-bottom:clamp(32px,4vw,48px);">
+    <div style="font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--au);display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+      <span style="display:block;width:22px;height:1px;background:var(--au);"></span>
+      Depoimentos em Áudio
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+
+      <!-- ÁUDIO 1 -->
+      <div style="background:var(--w);border:1px solid var(--ln);border-radius:9px;padding:22px;position:relative;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--au),var(--au3));border-radius:9px 9px 0 0;"></div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--g2),var(--g4));display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          </div>
+          <div>
+            <div style="font-size:14px;font-weight:600;color:var(--g);">Manual de Aves e de Suínos</div>
+            <div style="font-size:11px;color:var(--t3);">Avicultor e Suinocultor</div>
+          </div>
+        </div>
+        <audio id="audio1" controls style="width:100%;accent-color:var(--g2);">
+          <source src="audio1.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <!-- ÁUDIO 2 -->
+      <div style="background:var(--w);border:1px solid var(--ln);border-radius:9px;padding:22px;position:relative;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--au),var(--au3));border-radius:9px 9px 0 0;"></div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--g2),var(--g4));display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          </div>
+          <div>
+            <div style="font-size:14px;font-weight:600;color:var(--g);">Manual de Aves e de Suínos</div>
+            <div style="font-size:11px;color:var(--t3);">Avicultor e Suinocultur</div>
+          </div>
+        </div>
+        <audio id="audio2" controls style="width:100%;accent-color:var(--g2);">
+          <source src="audio2.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <!-- ÁUDIO 3 -->
+      <div style="background:var(--w);border:1px solid var(--ln);border-radius:9px;padding:22px;position:relative;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--au),var(--au3));border-radius:9px 9px 0 0;"></div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--g2),var(--g4));display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          </div>
+          <div>
+            <div style="font-size:14px;font-weight:600;color:var(--g);">Manual de Aves e de suínos</div>
+            <div style="font-size:11px;color:var(--t3);">Avicultor e Suinocultur</div>
+          </div>
+        </div>
+        <audio id="audio3" controls style="width:100%;accent-color:var(--g2);">
+          <source src="audio3.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+
+    </div>
   </div>
+
+  <!-- ESCRITOS -->
+  <div style="font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--au);display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+    <span style="display:block;width:22px;height:1px;background:var(--au);"></span>
+    Depoimentos Escritos
+  </div>
+  <div class="tg">
+    <div class="tc"><span class="tq">"</span><div class="ts"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tt">O guia do produtor angolano explicou-me como preparar o solo de forma que nunca ninguém me tinha explicado. Simples, directo e com passos claros. Valeu cada kwanza.</p><div class="ta"><div class="tav">M</div><div><div class="tn">Manuel K.</div><div class="tr">Agricultor · Huambo</div></div></div></div>
+    <div class="tc"><span class="tq">"</span><div class="ts"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tt">Comprei o guia de tomate. Segui os passos do viveiro exactamente como está escrito. As mudas ficaram muito mais fortes do que as que fazia antes. Já estão no campo.</p><div class="ta"><div class="tav">F</div><div><div class="tn">Filomena N.</div><div class="tr">Agricultora · Malanje</div></div></div></div>
+    <div class="tc"><span class="tq">"</span><div class="ts"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tt">Comprei o guia completo do produtor. A parte de gestão financeira abriu-me os olhos — nunca tinha calculado o custo real da minha produção. Agora sei exactamente o que ganho por saca.</p><div class="ta"><div class="tav">J</div><div><div class="tn">João P.</div><div class="tr">Agricultor  · Kwanza Sul</div></div></div></div>
+  </div>
+
 </div></section>
 
 <!-- CTA -->
@@ -542,6 +610,18 @@ document.querySelectorAll('.sh,.wi,.tc,.bi,.trust-in,.proof,.btns,.eyebrow,.hero
   el.style.opacity='0';el.style.transform='translateY(22px)';
   el.style.transition='opacity .6s ease, transform .6s ease';
   io.observe(el);
+});
+// Para os outros áudios quando um começa
+const audios = document.querySelectorAll('audio');
+audios.forEach(a => {
+  a.addEventListener('play', () => {
+    audios.forEach(other => {
+      if (other !== a) {
+        other.pause();
+        other.currentTime = 0;
+      }
+    });
+  });
 });
 
 rBooks('all');
