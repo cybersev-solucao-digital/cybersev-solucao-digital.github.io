@@ -1,266 +1,534 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberSev — Biblioteca Agropecuária de Angola</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--g:#0d2010;--g2:#1c4824;--g3:#27622f;--g4:#358540;--au:#b8922a;--au2:#d4aa40;--au3:#eac96a;--w:#fff;--off:#f8f6f1;--off2:#f0ece3;--t:#111108;--t2:#3a3a2e;--t3:#7a7a60;--ln:#e4dfd4;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;color:var(--t);background:var(--w);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;font-family:inherit;border:none;background:none;}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(18px,5vw,52px);}
 
-  <title>CyberSev Solução Digital | Sites Profissionais & Identidade Digital</title>
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:99;height:66px;display:flex;align-items:center;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--ln);}
+.ni{width:100%;max-width:1160px;margin:0 auto;padding:0 clamp(18px,5vw,52px);display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo-mark{width:34px;height:34px;background:var(--g2);border-radius:4px;display:flex;align-items:center;justify-content:center;}
+.logo-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--g);line-height:1.1;}
+.logo-sub{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--au);}
+.nm{display:flex;align-items:center;gap:24px;list-style:none;}
+.nm a{font-size:13px;font-weight:500;color:var(--t2);transition:color .2s;}
+.nm a:hover{color:var(--g2);}
+.nm .cta{background:var(--g2);color:#fff;padding:9px 20px;border-radius:3px;font-weight:600;font-size:13px;}
+.nm .cta:hover{background:var(--g3);}
+.burg{display:none;flex-direction:column;gap:5px;padding:4px;}
+.burg span{display:block;width:22px;height:2px;background:var(--g);border-radius:2px;}
+.drw{display:none;position:fixed;top:66px;left:0;right:0;background:#fff;border-bottom:1px solid var(--ln);padding:18px clamp(18px,5vw,52px) 24px;flex-direction:column;gap:0;z-index:98;}
+.drw.open{display:flex;}
+.drw a{font-size:15px;font-weight:500;color:var(--t2);padding:12px 0;border-bottom:1px solid var(--ln);}
+.drw a:last-child{border:none;color:#25D366;font-weight:600;}
 
-  <!-- Ícones -->
-  <link rel="icon" href="lg.png" type="image/png">
-  <link rel="apple-touch-icon" href="lg.png">
+/* HERO */
+.hero{padding-top:66px;min-height:100vh;display:grid;grid-template-columns:55% 45%;align-items:stretch;}
+.hl{padding:clamp(56px,7vw,96px) clamp(18px,5vw,52px);display:flex;flex-direction:column;justify-content:center;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--au);margin-bottom:22px;}
+.eyebrow::before{content:'';width:26px;height:1px;background:var(--au);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,4.2vw,60px);font-weight:900;line-height:1.06;color:var(--g);margin-bottom:20px;letter-spacing:-.5px;}
+.hero h1 em{font-style:italic;color:var(--g3);}
+.hero-p{font-size:clamp(15px,1.6vw,17px);color:var(--t2);font-weight:300;line-height:1.85;max-width:450px;margin-bottom:36px;}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;padding:14px 28px;border-radius:3px;border:2px solid transparent;transition:all .2s;white-space:nowrap;}
+.btn-g{background:var(--g2);color:#fff;border-color:var(--g2);}
+.btn-g:hover{background:var(--g3);border-color:var(--g3);transform:translateY(-2px);}
+.btn-o{background:transparent;color:var(--g2);border-color:var(--g2);}
+.btn-o:hover{background:var(--g2);color:#fff;transform:translateY(-2px);}
+.btn-wa{background:#25D366;color:#fff;border-color:#25D366;}
+.btn-wa:hover{background:#1fba58;transform:translateY(-2px);}
+.btn-wa-big{font-size:15px;padding:15px 32px;}
+.btn-gold{background:var(--au);color:#fff;border-color:var(--au);}
+.btn-gold:hover{background:var(--au2);transform:translateY(-2px);}
+.proof{display:flex;align-items:center;gap:16px;font-size:13px;color:var(--t3);flex-wrap:wrap;}
+.proof strong{color:var(--g2);font-weight:700;}
+.pdiv{width:1px;height:24px;background:var(--ln);}
 
-  <!-- Viewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- SEO Essencial (limpo e forte) -->
-  <meta name="description" content="CyberSev Solução Digital cria sites profissionais, landing pages, logotipos e presença digital completa. Design tecnológico, persuasivo e confiável.">
-  <meta name="keywords" content="criação de sites Angola, web design profissional, landing page Angola, identidade digital, CyberSev">
-  <meta name="author" content="CyberSev Solução Digital">
-  <meta name="robots" content="index, follow">
+/* Hero right */
+.hr{background:var(--g);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:clamp(56px,7vw,96px) clamp(24px,3vw,48px);}
+.hr-deco{position:absolute;inset:0;pointer-events:none;}
+.bstack{display:flex;flex-direction:column;gap:14px;position:relative;z-index:2;}
+.bi{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:7px;padding:13px 15px;transition:.2s;}
+.bi:hover{background:rgba(255,255,255,.08);border-color:rgba(212,170,64,.3);}
+.bi-thumb{width:46px;height:62px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;position:relative;overflow:hidden;}
+.bi-thumb::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--au3),var(--au));}
+.bi-cat{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--au2);font-weight:600;margin-bottom:3px;}
+.bi-title{font-family:'Playfair Display',serif;font-size:13px;color:#fff;line-height:1.3;font-weight:700;}
+.bi-price{font-size:12px;color:var(--au3);font-weight:600;margin-top:3px;}
+.hr-label{position:absolute;bottom:28px;left:0;right:0;text-align:center;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.2);}
 
-  <!-- Canonical (CRÍTICO) -->
-  <link rel="canonical" href="https://cybersev-solucao-digital.github.io/">
-  
-  <link rel="manifest" href="/manifest.json">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
+/* TRUST */
+.trust{background:var(--off);border-top:1px solid var(--ln);border-bottom:1px solid var(--ln);padding:18px 0;}
+.trust-in{display:flex;align-items:center;justify-content:center;gap:clamp(16px,4vw,52px);flex-wrap:wrap;}
+.ti{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:500;color:var(--t2);}
+.ti-ico{width:30px;height:30px;border-radius:50%;background:var(--w);border:1px solid var(--ln);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "CyberSev Solução Digital",
-  "url": "https://cybersev-solucao-digital.github.io/",
-  "areaServed": "AO",
-  "image": "https://cybersev-solucao-digital.github.io/lg.png"
-}
-</script>
-  <!-- Open Graph (Facebook / WhatsApp / LinkedIn) -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="CyberSev Solução Digital | Soluções Digitais Profissionais">
-  <meta property="og:description" content="Criação de sites, landing pages e identidade digital profissional para empresas e marcas.">
-  <meta property="og:url" content="https://cybersev-solucao-digital.github.io/">
-  <meta property="og:image" content="https://cybersev-solucao-digital.github.io/lg.png">
-  <meta property="og:image:secure_url" content="https://cybersev-solucao-digital.github.io/lg.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+/* SECTION HEADER */
+.sh{margin-bottom:clamp(32px,4vw,52px);}
+.sh.center{text-align:center;}
+.sh-ey{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--au);display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.sh-ey::before{content:'';width:22px;height:1px;background:var(--au);}
+.sh.center .sh-ey{justify-content:center;}
+.sh.center .sh-ey::before{display:none;}
+.sh h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.2vw,44px);font-weight:900;color:var(--g);line-height:1.12;letter-spacing:-.3px;}
+.sh h2 em{font-style:italic;color:var(--g3);}
+.sh p{margin-top:12px;font-size:16px;color:var(--t2);font-weight:300;line-height:1.8;max-width:500px;}
+.sh.center p{margin:12px auto 0;}
+.sh.light h2{color:#fff;}
+.sh.light .sh-ey{color:var(--au3);}
+.sh.light .sh-ey::before{background:var(--au3);}
+.sh.light p{color:rgba(255,255,255,.5);}
 
-  <!-- Twitter Card (reforço de crawler) -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CyberSev Solução Digital">
-  <meta name="twitter:description" content="Soluções digitais profissionais: sites, landing pages e identidade digital.">
-  <meta name="twitter:image" content="https://cybersev-solucao-digital.github.io/lg.png">
+/* CATALOGUE */
+#catalogo{padding:clamp(56px,7vw,104px) 0;}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:44px;}
+.flt{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:9px 18px;border-radius:3px;border:1.5px solid var(--ln);color:var(--t2);background:transparent;transition:.2s;}
+.flt:hover{border-color:var(--g2);color:var(--g2);}
+.flt.on{background:var(--g2);color:#fff;border-color:var(--g2);}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:26px;}
 
-  <!-- Tema -->
-  <meta name="theme-color" content="#0b0f1a">
+/* BOOK CARD */
+.bc{background:var(--w);border:1px solid var(--ln);border-radius:9px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s,border-color .3s;}
+.bc:hover{transform:translateY(-5px);box-shadow:0 12px 48px rgba(0,0,0,.1);border-color:rgba(184,146,42,.35);}
+.bc-cov{position:relative;aspect-ratio:3/4;overflow:hidden;}
+.bc-cov-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:20px 18px;}
+.bc-cov-ph::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,var(--au3),var(--au),var(--au2));}
+.bc-cov-ph::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--au),var(--au3));}
+.bc-cov img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.bc:hover .bc-cov img{transform:scale(1.04);}
+.cov-top{width:100%;z-index:1;}
+.cov-cat{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(201,151,58,.9);font-weight:700;margin-bottom:4px;}
+.cov-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:rgba(255,255,255,.92);line-height:1.3;}
+.cov-icon{font-size:56px;opacity:.12;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+.cov-bottom{width:100%;z-index:1;}
+.cov-brand{font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.3);}
+.bc-badge{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.92);color:var(--au);font-size:8px;font-weight:700;letter-spacing:1.5px;padding:3px 9px;border-radius:2px;}
+.bc-body{padding:18px 18px 14px;flex:1;display:flex;flex-direction:column;}
+.bc-cat{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--au);margin-bottom:6px;}
+.bc-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--g);line-height:1.3;margin-bottom:8px;}
+.bc-desc{font-size:12.5px;color:var(--t3);line-height:1.7;flex:1;margin-bottom:14px;}
+.bc-pr-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--ln);}
+.bc-price{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--g2);}
+.bc-pnote{font-size:11px;color:var(--t3);}
+.bc-acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.bca{padding:10px 8px;border-radius:3px;font-family:'Jost',sans-serif;font-size:11px;font-weight:700;letter-spacing:.3px;text-align:center;transition:.2s;border:1.5px solid transparent;}
+.bca-out{border-color:var(--g2);color:var(--g2);}
+.bca-out:hover{background:var(--g2);color:#fff;}
+.bca-wa{background:#25D366;color:#fff;border-color:#25D366;display:flex;align-items:center;justify-content:center;gap:5px;}
+.bca-wa:hover{background:#1fba58;}
 
-  <!-- Cache control (mantido como você definiu) -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
+/* WHY */
+#porque{background:var(--g);padding:clamp(56px,7vw,104px) 0;}
+.why-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.05);border-radius:9px;overflow:hidden;margin-top:clamp(32px,4vw,52px);}
+.wi{background:rgba(13,32,16,.6);padding:clamp(24px,3vw,38px);transition:.2s;}
+.wi:hover{background:rgba(22,56,28,.65);}
+.wi-n{font-family:'Playfair Display',serif;font-size:38px;font-weight:900;color:rgba(212,170,64,.15);line-height:1;margin-bottom:14px;}
+.wi-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#fff;margin-bottom:8px;}
+.wi-desc{font-size:13.5px;color:rgba(255,255,255,.42);line-height:1.8;font-weight:300;}
 
-  <!-- Fonte -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+/* TESTIMONIALS */
+#depoimentos{background:var(--off);padding:clamp(56px,7vw,104px) 0;}
+.tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px;margin-top:clamp(32px,4vw,52px);}
+.tc{background:var(--w);border:1px solid var(--ln);border-radius:9px;padding:clamp(22px,3vw,34px);position:relative;transition:.25s;}
+.tc:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,.07);}
+.tc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--au),var(--au3));border-radius:9px 9px 0 0;}
+.tq{font-family:'Playfair Display',serif;font-size:72px;line-height:.45;color:var(--g4);opacity:.12;margin-bottom:12px;display:block;}
+.ts{display:flex;gap:2px;margin-bottom:12px;}
+.ts span{color:var(--au2);font-size:14px;}
+.tt{font-size:14.5px;color:var(--t2);line-height:1.85;font-style:italic;margin-bottom:18px;}
+.ta{display:flex;align-items:center;gap:11px;}
+.tav{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--g2),var(--g4));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff;flex-shrink:0;}
+.tn{font-size:13.5px;font-weight:600;color:var(--g);}
+.tr{font-size:12px;color:var(--t3);}
 
-  <!-- Estilo -->
-  <link rel="stylesheet" href="style.css">
+/* CTA BANNER */
+.cta{background:var(--g2);padding:clamp(56px,7vw,96px) 0;position:relative;overflow:hidden;}
+.cta-deco{position:absolute;inset:0;pointer-events:none;}
+.cta-in{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;align-items:center;gap:36px;}
+.cta h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.2vw,42px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:10px;}
+.cta h2 em{font-style:italic;color:var(--au3);}
+.cta p{font-size:16px;color:rgba(255,255,255,.5);font-weight:300;}
+.cta-acts{display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
 
-<link rel="dns-prefetch" href="//fonts.googleapis.com">
-<link rel="dns-prefetch" href="//fonts.gstatic.com">
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "CyberSev Solução Digital",
-  "url": "https://cybersev-solucao-digital.github.io/",
-  "logo": "https://cybersev-solucao-digital.github.io/lg.png",
-  "sameAs": []
-}
-</script>
-  <!-- Dados estruturados (indexação rápida) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "CyberSev Solução Digital",
-    "url": "https://cybersev-solucao-digital.github.io/"
-  }
-  </script>
-<link rel="preload" href="style.css" as="style">
-<link rel="preload" href="lg.png" as="image">
+/* FOOTER */
+footer{background:var(--g);padding:clamp(44px,6vw,76px) 0 0;}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr;gap:clamp(28px,5vw,64px);margin-bottom:clamp(36px,5vw,56px);padding-bottom:clamp(36px,5vw,56px);border-bottom:1px solid rgba(255,255,255,.07);}
+.fb-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:2px;}
+.fb-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--au2);margin-bottom:14px;}
+.fb-desc{font-size:13px;color:rgba(255,255,255,.32);line-height:1.8;font-weight:300;max-width:268px;}
+.fc-title{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--au2);margin-bottom:16px;}
+.fl{list-style:none;}
+.fl li{margin-bottom:9px;}
+.fl a{font-size:13px;color:rgba(255,255,255,.38);transition:.2s;}
+.fl a:hover{color:var(--au3);}
+.fb2{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-bottom:28px;}
+.fcopy{font-size:12px;color:rgba(255,255,255,.2);}
+.fwa{display:inline-flex;align-items:center;gap:7px;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.18);color:#25D366;font-size:13px;font-weight:600;padding:7px 16px;border-radius:3px;}
+.fwa:hover{background:rgba(37,211,102,.15);}
+
+/* MODAL */
+.ov{display:none;position:fixed;inset:0;z-index:200;background:rgba(8,18,8,.84);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:16px;}
+.ov.open{display:flex;}
+.md{background:#fff;border-radius:11px;width:100%;max-width:660px;max-height:91svh;overflow-y:auto;position:relative;box-shadow:0 28px 72px rgba(0,0,0,.45);}
+.md-cover{height:200px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:80px;}
+.md-cover::after{content:'';position:absolute;bottom:0;left:0;right:0;height:70px;background:linear-gradient(transparent,rgba(0,0,0,.4));}
+.md-x{position:absolute;top:12px;right:12px;z-index:5;width:32px;height:32px;border-radius:50%;background:rgba(0,0,0,.4);color:#fff;font-size:14px;display:flex;align-items:center;justify-content:center;}
+.md-x:hover{background:rgba(0,0,0,.7);}
+.md-body{padding:clamp(20px,3vw,32px);}
+.md-cat{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--au);margin-bottom:7px;}
+.md-title{font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,30px);font-weight:900;color:var(--g);line-height:1.2;margin-bottom:12px;}
+.md-desc{font-size:14.5px;color:var(--t2);line-height:1.85;margin-bottom:20px;font-weight:300;}
+.md-topics{background:var(--off);border-radius:7px;padding:18px 20px;margin-bottom:22px;}
+.md-topics-ttl{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--g2);margin-bottom:12px;}
+.md-topics ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:5px;}
+.md-topics li{font-size:12.5px;color:var(--t2);display:flex;align-items:flex-start;gap:7px;}
+.md-topics li::before{content:'';display:block;width:5px;height:5px;border-radius:50%;background:var(--g4);margin-top:7px;flex-shrink:0;}
+.md-foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;padding-top:20px;border-top:1px solid var(--ln);}
+.md-price{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:var(--g2);line-height:1;}
+.md-pnote{font-size:11.5px;color:var(--t3);margin-top:3px;}
+
+/* RESPONSIVE */
+@media(max-width:1020px){.hero{grid-template-columns:1fr;}.hr{display:none;}.hl{padding-top:80px;padding-bottom:64px;max-width:100%;}.cta-in{grid-template-columns:1fr;}.cta-acts{align-items:flex-start;}.ft{grid-template-columns:1fr 1fr;}}
+@media(max-width:760px){.nm{display:none;}.burg{display:flex;}.md-topics ul{grid-template-columns:1fr;}.ft{grid-template-columns:1fr;}}
+@media(max-width:500px){.btns{flex-direction:column;}.btns .btn{width:100%;justify-content:center;}.bc-acts{grid-template-columns:1fr;}.md-foot{flex-direction:column;}.btn-wa-big{width:100%;justify-content:center;}.fb2{flex-direction:column;text-align:center;}.proof{gap:10px;}}
+</style>
 </head>
 <body>
-<!-- MENU HAMBURGER -->
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-<nav class="sidebar" id="sidebar">
-  <a href="#inicio" onclick="toggleMenu()">Início</a>
-  <a href="#servicos" onclick="toggleMenu()">Serviços</a>
-  <a href="#precos" onclick="toggleMenu()">Ver Preços</a>
-<a href="consulta.html">Marcar Consulta</a>
- <a href="privacidade.html">Politicas de privacidade</a>
-  <a href="#contato" onclick="toggleMenu()">Contato</a>
+<!-- NAV -->
+<nav id="nav">
+  <div class="ni">
+    <a href="#" class="logo">
+<img src="logo.png" alt="CyberSev" style="height:36px;width:auto;">
+      <div>
+        <div class="logo-name">CyberSev</div>
+        <div class="logo-sub">Solução Digital</div>
+      </div>
+    </a>
+    <ul class="nm">
+      <li><a href="#catalogo">Biblioteca</a></li>
+      <li><a href="#porque">Porquê Nós</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="https://wa.me/244959622160" target="_blank" class="cta">Falar Connosco</a></li>
+    </ul>
+    <button class="burg" id="burg"><span></span><span></span><span></span></button>
+  </div>
 </nav>
-<a href="consulta.html" class="consulta-btn" id="consultaBtn">
-  Marcar Consulta Online<br>
-  <span>com a CyberSev</span>
-</a>
-<!-- HEADER -->
-<header class="hero" id="inicio">
-  <div class="overlay"></div>
-  <div class="hero-content">
-    <img src="lg.png" alt="CyberSev Solução Digital" class="logo-site">
-    <h1>CyberSev<br><span>Solução Digital</span></h1>
-    <p>
-      Criamos experiências digitais que transformam negócios comuns  
-      em marcas profissionais, confiáveis e memoráveis.
-    </p>
-    <a href="#servicos" class="btn-primary">Veja nossos Serviços</a>
-  </div>
-</header>
+<div class="drw" id="drw">
+  <a href="#catalogo" onclick="cD()">📚 Biblioteca</a>
+  <a href="#porque" onclick="cD()">⭐ Porquê Nós</a>
+  <a href="#depoimentos" onclick="cD()">💬 Depoimentos</a>
+  <a href="https://wa.me/244959622160" target="_blank">📲 +244 959 622 160</a>
+</div>
 
-<!-- SOBRE -->
-<section class="section about">
-  <div class="container">
-    <h2>Autoridade Digital Começa Aqui</h2>
-    <p>
-      A <strong>CyberSev Solução Digital</strong> nasce com um objetivo claro:
-      elevar empreendedores, projetos e empresas do nível amador
-      para um posicionamento digital profissional, sólido e competitivo.
-    </p>
-    <p>
-      Não criamos apenas sites. Criamos <strong>presença, credibilidade e conversão</strong>.
-    </p>
-  </div>
-</section>
-
-<!-- SERVIÇOS -->
-<section id="servicos" class="section services">
-  <div class="container">
-    <h2>Soluções Digitais Estratégicas</h2>
-
-    <div class="cards">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Criação de Sites">
-        <h3>Criação de Sites Profissionais</h3>
-        <p>
-          Sites rápidos, responsivos e otimizados para gerar confiança,
-          autoridade e resultados reais no Google e nas redes sociais.
-        </p>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Landing Pages">
-        <h3>Landing Pages de Conversão</h3>
-        <p>
-          Páginas estratégicas focadas em transformar visitantes
-          em contactos, clientes e oportunidades.
-        </p>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1507209696998-3c532be9b2b5" alt="Identidade Digital">
-        <h3>Identidade Digital Completa</h3>
-        <p>
-          Logotipo, layout, estrutura visual e posicionamento
-          profissional para destacar sua marca no mercado.
-        </p>
-      </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hl">
+    <div class="eyebrow">Biblioteca Agropecuária · Angola 2026</div>
+    <h1>Manuais que <em>transformam</em><br>o campo angolano</h1>
+    <p class="hero-p">14 guias técnicos digitais. Escritos para a realidade de Angola. Passos claros, regras rígidas, conhecimento que aplicas amanhã no campo — do solo à venda — da pequena criação à empresa.</p>
+    <div class="btns">
+      <a href="#catalogo" class="btn btn-g">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Ver Todos os Manuais
+      </a>
+      <a href="https://wa.me/244959622160" target="_blank" class="btn btn-o">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.845L0 24l6.335-1.502A11.955 11.955 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.013-1.377l-.36-.213-3.76.891.946-3.653-.234-.375A9.785 9.785 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg>
+        Falar Connosco
+      </a>
+    </div>
+    <div class="proof">
+      <span><strong>14</strong> Manuais</span><div class="pdiv"></div>
+      <span><strong>100%</strong> Angola</span><div class="pdiv"></div>
+      <span>Entrega <strong>imediata</strong></span><div class="pdiv"></div>
+      <span>Desde <strong>3.900 Kz</strong></span>
     </div>
   </div>
-</section>
 
-<!-- DIFERENCIAL -->
-<section class="section diferencial">
-  <div class="container">
-    <h2>Por Que Escolher a CyberSev?</h2>
-    <ul>
-      <li>✔ Design tecnológico, limpo e profissional</li>
-      <li>✔ Conteúdo persuasivo que prende o visitante</li>
-      <li>✔ SEO real, não apenas aparência</li>
-      <li>✔ Estrutura pensada para crescer</li>
-      <li>✔ Responsivo em celular, tablet e computador</li>
-    </ul>
+  <div class="hr">
+    <svg class="hr-deco" viewBox="0 0 580 800" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="hg" cx="55%" cy="30%" r="60%"><stop offset="0%" stop-color="#27622f" stop-opacity=".4"/><stop offset="100%" stop-color="#0d2010" stop-opacity="0"/></radialGradient>
+        <radialGradient id="hg2" cx="20%" cy="80%" r="45%"><stop offset="0%" stop-color="#b8922a" stop-opacity=".1"/><stop offset="100%" stop-color="#0d2010" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect width="580" height="800" fill="#0d2010"/>
+      <rect width="580" height="800" fill="url(#hg)"/>
+      <rect width="580" height="800" fill="url(#hg2)"/>
+      <g stroke="rgba(255,255,255,.022)" stroke-width="1">
+        <line x1="0" y1="160" x2="580" y2="160"/><line x1="0" y1="320" x2="580" y2="320"/>
+        <line x1="0" y1="480" x2="580" y2="480"/><line x1="0" y1="640" x2="580" y2="640"/>
+        <line x1="145" y1="0" x2="145" y2="800"/><line x1="290" y1="0" x2="290" y2="800"/><line x1="435" y1="0" x2="435" y2="800"/>
+      </g>
+      <circle cx="460" cy="130" r="180" fill="none" stroke="rgba(212,170,64,.04)" stroke-width="1"/>
+      <circle cx="460" cy="130" r="120" fill="none" stroke="rgba(212,170,64,.06)" stroke-width="1"/>
+      <circle cx="460" cy="130" r="60"  fill="none" stroke="rgba(212,170,64,.09)" stroke-width="1"/>
+      <path d="M60 700 Q110 640 160 690 Q110 750 60 700Z" fill="rgba(39,98,47,.12)"/>
+    </svg>
+    <div class="bstack">
+      <div class="bi"><div class="bi-thumb" style="background:linear-gradient(145deg,#1a4a1e,#0b2a0e)">🌾</div><div><div class="bi-cat">Agricultura</div><div class="bi-title">Guia Completo do Produtor Angolano</div><div class="bi-price">5.000 Kz</div></div></div>
+      <div class="bi"><div class="bi-thumb" style="background:linear-gradient(145deg,#3a2e0a,#1e1805)">🍗</div><div><div class="bi-cat">Avicultura</div><div class="bi-title">Guia de Frango de Corte em Angola</div><div class="bi-price">5.000 Kz</div></div></div>
+      <div class="bi"><div class="bi-thumb" style="background:linear-gradient(145deg,#2e1a0a,#180e05)">🐄</div><div><div class="bi-cat">Gado</div><div class="bi-title">Guia Completo de Bovinos em Angola</div><div class="bi-price">5.000 Kz</div></div></div>
+      <div class="bi"><div class="bi-thumb" style="background:linear-gradient(145deg,#2e2a0a,#181605)">🥚</div><div><div class="bi-cat">Avicultura</div><div class="bi-title">Criação de Galinhas Poedeiras</div><div class="bi-price">5.000 Kz</div></div></div>
+      <div class="bi"><div class="bi-thumb" style="background:linear-gradient(145deg,#2e1e0a,#180f05)">🐐</div><div><div class="bi-cat">Caprinos</div><div class="bi-title">Guia Completo de Cabras em Angola</div><div class="bi-price">5.000 Kz</div></div></div>
+    </div>
+    <div class="hr-label">CyberSev Solução Digital · Angola 2026</div>
   </div>
 </section>
+
+<!-- TRUST -->
+<div class="trust"><div class="wrap"><div class="trust-in">
+  <div class="ti"><div class="ti-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1c4824" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>Conteúdo verificado</div>
+  <div class="ti"><div class="ti-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1c4824" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>Entrega imediata — WhatsApp</div>
+  <div class="ti"><div class="ti-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1c4824" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>Escrito para Angola</div>
+  <div class="ti"><div class="ti-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1c4824" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>Passos claros, regras rígidas</div>
+</div></div></div>
+
+<!-- CATALOGUE -->
+<section id="catalogo"><div class="wrap">
+  <div class="sh">
+    <div class="sh-ey">Biblioteca Completa</div>
+    <h2>Os 14 manuais que <em>mudam</em><br>a forma de produzir</h2>
+    <p>Cada guia é completo, prático e adaptado para o produtor angolano. Clica em <strong>Ver Detalhes</strong> para saber tudo o que vais aprender.</p>
+  </div>
+  <div class="filters">
+    <button class="flt on" onclick="flt('all',this)">Todos (14)</button>
+    <button class="flt" onclick="flt('a',this)">🌱 Agricultura</button>
+    <button class="flt" onclick="flt('g',this)">🐄 Gado</button>
+    <button class="flt" onclick="flt('av',this)">🐔 Aves</button>
+    <button class="flt" onclick="flt('c',this)">🐐 Caprinos</button>
+  </div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<!-- WHY -->
+<section id="porque"><div class="wrap">
+  <div class="sh light">
+    <div class="sh-ey">Porquê a CyberSev</div>
+    <h2>Não é teoria.<br>É o campo <em>angolano real</em>.</h2>
+    <p>Construído a partir da realidade que o produtor angolano vive todos os dias.</p>
+  </div>
+  <div class="why-g">
+    <div class="wi"><div class="wi-n">01</div><div class="wi-title">Realidade angolana</div><div class="wi-desc">Clima, solos, mercados e desafios de Angola. Nada copiado de outros contextos.</div></div>
+    <div class="wi"><div class="wi-n">02</div><div class="wi-title">Passos numerados</div><div class="wi-desc">Cada processo tem etapas claras, regras destacadas e alertas para não errares.</div></div>
+    <div class="wi"><div class="wi-n">03</div><div class="wi-title">Focado no lucro</div><div class="wi-desc">Tabelas de custo, rentabilidade e estratégias de venda em cada manual.</div></div>
+    <div class="wi"><div class="wi-n">04</div><div class="wi-title">Entrega imediata</div><div class="wi-desc">Pagas e recebes o PDF no WhatsApp em segundos. Sem esperas nem complicações.</div></div>
+  </div>
+</div></section>
+
+<!-- TESTIMONIALS -->
+<section id="depoimentos"><div class="wrap">
+  <div class="sh center">
+    <div class="sh-ey">Depoimentos</div>
+    <h2>O que dizem os <em>produtores</em></h2>
+    <p>Resultados reais de produtores angolanos que aplicaram o conhecimento dos manuais CyberSev.</p>
+  </div>
+  <div class="tg">
+    <div class="tc"><span class="tq">"</span><div class="ts"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tt">Comprei o guia de frango de corte e apliquei as técnicas de alimentação por fase. A mortalidade baixou de 12% para menos de 3%. Foi o melhor investimento que fiz na avicultura.</p><div class="ta"><div class="tav">M</div><div><div class="tn">Manuel K.</div><div class="tr">Avicultor · Huambo</div></div></div></div>
+    <div class="tc"><span class="tq">"</span><div class="ts"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tt">O guia de tomate mudou a minha forma de trabalhar. Aprendi a fazer mudas em viveiro e a controlar a requeima. A minha produção triplicou na segunda campanha.</p><div class="ta"><div class="tav">F</div><div><div class="tn">Filomena N.</div><div class="tr">Agricultora · Malanje</div></div></div></div>
+    <div class="tc"><span class="tq">"</span><div class="ts"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="tt">Nunca pensei que criar suínos podia ser tão organizado. O manual explica desde a pocilga até à comercialização. Tenho agora 40 suínos e clientes fixos em Luanda.</p><div class="ta"><div class="tav">J</div><div><div class="tn">João P.</div><div class="tr">Suinocultor · Kwanza Sul</div></div></div></div>
+  </div>
+</div></section>
 
 <!-- CTA -->
-<section class="section cta">
-  <div class="container">
-    <h2>O Seu Projeto Merece um Nível Profissional</h2>
-    <p>
-      Se você quer parar de perder oportunidades e
-      começar a transmitir confiança desde o primeiro clique,
-      este é o momento.
-    </p>
-    <a href="https://wa.me/244934919736" class="btn-secondary">Solicitar Orçamento</a>
+<div class="cta"><div class="cta-deco">
+  <svg width="100%" height="100%" viewBox="0 0 1200 280" preserveAspectRatio="xMidYMid slice">
+    <circle cx="100" cy="140" r="180" fill="none" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+    <circle cx="1100" cy="140" r="160" fill="none" stroke="rgba(212,170,64,.05)" stroke-width="1"/>
+    <circle cx="1100" cy="140" r="100" fill="none" stroke="rgba(212,170,64,.07)" stroke-width="1"/>
+    <path d="M500 220 Q600 150 700 200 Q600 270 500 220Z" fill="rgba(255,255,255,.03)"/>
+  </svg>
+</div><div class="wrap"><div class="cta-in">
+  <div><h2>Angola tem a terra.<br>Tu tens o <em>conhecimento</em>.</h2><p>14 manuais. desde 3.900 Kz. Entrega imediata por WhatsApp.</p></div>
+  <div class="cta-acts">
+    <a href="#catalogo" class="btn btn-gold">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      Ver Todos os Manuais
+    </a>
+    <a href="https://wa.me/244959622160" target="_blank" class="btn btn-wa btn-wa-big">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.845L0 24l6.335-1.502A11.955 11.955 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.013-1.377l-.36-.213-3.76.891.946-3.653-.234-.375A9.785 9.785 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg>
+      +244 959 622 160
+    </a>
   </div>
-</section>
-<section class="section services" id="precos">
-  <div class="container">
-    <h2>Serviços e Preços</h2>
+</div></div></div>
 
-    <div class="cards">
+<!-- FOOTER -->
+<footer><div class="wrap">
+  <div class="ft">
+    <div><div class="fb-name">CyberSev</div><div class="fb-tag">Transformando Vidas. Construindo Futuros.</div><p class="fb-desc">A maior biblioteca de manuais agropecuários digitais de Angola. Conhecimento prático, directo e adaptado à realidade do produtor angolano de 2026.</p></div>
+    <div><div class="fc-title">Biblioteca</div><ul class="fl"><li><a href="#catalogo">🌱 Agricultura (6)</a></li><li><a href="#catalogo">🐄 Bovinos</a></li><li><a href="#catalogo">🐷 Suínos</a></li><li><a href="#catalogo">🐔 Frango de Corte</a></li><li><a href="#catalogo">🥚 Galinhas Poedeiras</a></li><li><a href="#catalogo">🦆 Patos</a></li><li><a href="#catalogo">🐐 Caprinos & Ovinos</a></li></ul></div>
+    <div><div class="fc-title">Contacto</div><ul class="fl"><li><a href="https://wa.me/244959622160" target="_blank">📲 WhatsApp</a></li><li><a href="#porque">Sobre a CyberSev</a></li><li><a href="#depoimentos">Depoimentos</a></li></ul></div>
+  </div>
+  <div class="fb2">
+    <span class="fcopy">© 2026 CyberSev Solução Digital · Angola</span>
+    <a href="https://wa.me/244959622160" target="_blank" class="fwa">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.845L0 24l6.335-1.502A11.955 11.955 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.013-1.377l-.36-.213-3.76.891.946-3.653-.234-.375A9.785 9.785 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg>
+      +244 959 622 160
+    </a>
+  </div>
+</div></footer>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
-        <h3>Landing Page Profissional</h3>
-        <p>
-          Página focada em conversão, ideal para divulgar serviços,
-          campanhas e captar clientes rapidamente.
-        </p>
-        <strong>10.000 Kz</strong><br><br>
-        <a class="btn-primary" href="https://wa.me/244934919736">Solicitar</a>
+<!-- MODAL -->
+<div class="ov" id="ov" onclick="cMO(event)">
+  <div class="md" id="md">
+    <div class="md-cover" id="mc"><button class="md-x" onclick="cM()">✕</button></div>
+    <div class="md-body">
+      <div class="md-cat" id="mcat"></div>
+      <h2 class="md-title" id="mtitle"></h2>
+      <p class="md-desc" id="mdesc"></p>
+      <div class="md-topics"><div class="md-topics-ttl">O que vais aprender</div><ul id="mtopics"></ul></div>
+      <div class="md-foot">
+        <div><div class="md-price">5.000 Kz</div><div class="md-pnote">PDF completo · Entrega imediata por WhatsApp</div></div>
+        <a id="mwa" href="#" target="_blank" class="btn btn-wa btn-wa-big">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.845L0 24l6.335-1.502A11.955 11.955 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.013-1.377l-.36-.213-3.76.891.946-3.653-.234-.375A9.785 9.785 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg>
+          Comprar Agora — 5.000 Kz
+        </a>
       </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93">
-        <h3>Site Profissional</h3>
-        <p>
-          Site completo com várias seções, design moderno,
-          SEO e presença digital sólida.
-        </p>
-        <strong>30.000 Kz</strong><br><br>
-        <a class="btn-primary" href="https://wa.me/244934919736">Solicitar</a>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
-        <h3>Site Premium Completo</h3>
-        <p>
-          Projeto avançado com identidade digital,
-          copywriting persuasivo, página de login, integração com Banco de Dados, dominio icluido e estrutura empresarial.
-        </p>
-        <strong>150.000 Kz</strong><br><br>
-        <a class="btn-primary" href="https://wa.me/244934919736">Solicitar</a>
-      </div>
-
     </div>
   </div>
-</section>
-<section class="section" id="contato">
-  <div class="container">
-    <h2>Contato</h2>
+</div>
 
-    <input type="text" id="nome" placeholder="Seu nome" required><br><br>
-    <textarea id="mensagem" placeholder="Escreva sua mensagem"></textarea><br><br>
-
-    <button class="btn-primary" onclick="enviarWhats()">Enviar no WhatsApp</button>
-  </div>
-</section>
-<!-- FOOTER -->
-<footer class="footer">
-  <p>© 2025 CyberSev Solução Digital • Todos os direitos reservados</p>
-</footer>
 <script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/sw.js");
+const D=[
+  {id:1,cat:'a',cl:'🌱 Agricultura',ico:'🌾',bg:'linear-gradient(150deg,#1a4a1e,#0b2a0e)',img:'agricultura.png',
+   t:'Guia Completo do Produtor Angolano',
+   d:'O manual mais completo sobre agricultura angolana. Do solo à venda, cada passo explicado com clareza para o produtor de qualquer região.',
+   tp:['Tipos de solo angolano','Análise e preparo','Clima por região','Culturas prioritárias','Técnicas de plantio','Irrigação acessível','Controlo de pragas','Colheita e armazenamento','Como vender','Gestão financeira','Calendário agrícola','Glossário técnico']},
+  {id:2,cat:'a',cl:'🌱 Agricultura',ico:'🌽',bg:'linear-gradient(150deg,#2d5a1e,#142e0c)',img:'milho.png',
+   t:'Como Plantar Milho em Angola',
+   d:'Variedades, adubação correcta, controlo de lagarta do cartucho e estratégias para maximizar a produção por hectare.',
+   tp:['Variedades para Angola','Preparo do terreno','Época correcta','Espaçamento','Adubação NPK','Lagarta do cartucho','Colheita e secagem','Armazenamento','Comercialização','Lucro por hectare','Erros fatais','Calendário']},
+  {id:3,cat:'a',cl:'🌱 Agricultura',ico:'🍠',bg:'linear-gradient(150deg,#3d2e0a,#1e1606)',img:'mandioca.png',
+   t:'Cultivo de Mandioca — Produção e Comercialização',
+   d:'A cultura mais resistente de Angola. Selecção de manivas, controlo do mosaico e processamento para vender com mais valor.',
+   tp:['Variedades doces e amargas','Selecção de manivas','Técnica de plantio','Adubação','Mosaico da mandioca','Controlo de pragas','Colheita','Processamento','Farinha e fuba','Armazenamento','Mercados','Rentabilidade']},
+  {id:4,cat:'a',cl:'🌱 Agricultura',ico:'🍅',bg:'linear-gradient(150deg,#4a1a1a,#2a0c0c)',img:'tomate.png',
+   t:'Cultivo de Tomate em Angola',
+   d:'Alto valor, alta demanda. Produção de mudas, tutoramento correcto, controlo de requeima e estratégias de venda lucrativas.',
+   tp:['Variedades recomendadas','Produção de mudas','Canteiro','Transplante','Tutoramento','Adubação','Irrigação gotejamento','Requeima','Mosca branca','Colheita','Comercialização','Rentabilidade']},
+  {id:5,cat:'a',cl:'🌱 Agricultura',ico:'🫘',bg:'linear-gradient(150deg,#3a2a10,#1e1508)',img:'feijao.png',
+   t:'Como Plantar Feijão e Maximizar o Lucro',
+   d:'Consórcio com milho, controlo da ferrugem e armazenamento sem perder para o caruncho. Lucro rápido com ciclo curto.',
+   tp:['Tipos de feijão','Espaçamento','Adubação fosfatada','Inoculação Rhizobium','Consórcio milho+feijão','Controlo de caruncho','Ferrugem','Debulha','Armazenamento','Preços','Erros comuns','Calendário']},
+  {id:6,cat:'a',cl:'🌱 Agricultura',ico:'🥬',bg:'linear-gradient(150deg,#1a3a1e,#0c1e10)',img:'feijao.png',
+   t:'Horta Lucrativa em Pequenos Espaços',
+   d:'O negócio mais rápido de Angola. Hortícolas de alto valor durante o cacimbo, quando os preços sobem e a concorrência cai.',
+   tp:['Escolha do espaço','Canteiros elevados','Substrato caseiro','Hortícolas rentáveis','Alface e couve','Cenoura e cebola','Rega correcta','Pragas naturais','Colheita e embalagem','Venda WhatsApp','Horta urbana','Plano de 30 dias']},
+  {id:7,cat:'g',cl:'🐄 Gado',ico:'🐄',bg:'linear-gradient(150deg,#2e1a0a,#180e05)',img:'bovino.png',
+   t:'Guia Completo de Bovinos em Angola',
+   d:'Da raça à comercialização. Criação adaptada ao clima angolano com foco em saúde animal, reprodução e lucro.',
+   tp:['Raças para Angola','Currais','Alimentação e pastagem','Reprodução e parto','Bezerros','Vacinação obrigatória','Febre aftosa','Tristeza parasitária','Carrapatos','Produção de leite','Engorda para corte','Comercialização']},
+  {id:8,cat:'g',cl:'🐄 Gado',ico:'🐷',bg:'linear-gradient(150deg,#3a1a2e,#1e0c18)',img:'suino.png',
+   t:'Guia Completo de Suínos em Angola',
+   d:'Pocilgas eficientes, alimentação por fase, vacinação correcta e como comercializar suínos com lucro real.',
+   tp:['Raças recomendadas','Pocilga','Alimentação por fase','Leitões','Vacinação','Doenças','Parasitas','Engorda eficiente','Custo/kg','Abate','Biosseguridade','Plano de negócio']},
+  {id:9,cat:'av',cl:'🐔 Aves',ico:'🍗',bg:'linear-gradient(150deg,#3a2e0a,#1e1805)',img:'frango.png',
+   t:'Guia de Frango de Corte em Angola',
+   d:'Linhagens Cobb e Ross, 1.ª semana crítica, conversão alimentar e controlo total de Newcastle e Gumboro.',
+   tp:['Linhagens Cobb, Ross, Hubbard','Aviário','Aquecimento 1.ª semana','Alimentação por fase','Conversão alimentar','Programa de luz','Vacinação','Newcastle e Gumboro','Biosseguridade','Vazio sanitário','Comercialização','Plano 500–5000 aves']},
+  {id:10,cat:'av',cl:'🐔 Aves',ico:'🥚',bg:'linear-gradient(150deg,#2e2a0a,#181605)',img:'poedeira.png',
+   t:'Criação de Galinhas Poedeiras',
+   d:'ISA Brown e Hy-Line, programa de luz, gestão da postura e como vender ovos com regularidade no mercado.',
+   tp:['Linhagens ISA Brown, Lohmann','Galpão','Recria das frangas','Alimentação','Programa de luz','Início da postura','Recolha e classificação','Vacinação','Doenças de postura','Muda forçada','Fim do ciclo','Registos diários']},
+  {id:11,cat:'av',cl:'🐔 Aves',ico:'🏗️',bg:'linear-gradient(150deg,#0a2e2e,#051818)',img:'aviario.png',
+   t:'Como Montar um Aviário Lucrativo',
+   d:'Do terreno ao primeiro lote. Projecto, licenciamento em Angola, gestão e como crescer o negócio avícola.',
+   tp:['Terreno','Projecto do galpão','Equipamentos','Custos em Kz','Licenciamento Angola','Corte vs postura','Fornecedores','Gestão diária','Controlo financeiro','Marketing e vendas','Gestão de crises','Plano de expansão']},
+  {id:12,cat:'av',cl:'🐔 Aves',ico:'🦆',bg:'linear-gradient(150deg,#0a1e3a,#050f1e)',img:'pato.png',
+   t:'Criação de Patos em Angola',
+   d:'Mercado pouco explorado, margem alta. Muscovy e Pekin, produção de ovos e carne para mercados locais.',
+   tp:['Raças Muscovy, Pekin, Khaki','Instalações','Alimentação','Patinhos','Incubação natural','Vacinação','Doenças','Patos para corte','Patos poedeiros','Comercialização','Custo e lucro','Plano de negócio']},
+  {id:13,cat:'c',cl:'🐐 Caprinos & Ovinos',ico:'🐐',bg:'linear-gradient(150deg,#2e1e0a,#180f05)',img:'cabra.png',
+   t:'Guia Completo de Cabras em Angola',
+   d:'Raças Boer e locais, manejo reprodutivo, controlo de verminose e mercado de carne e leite de cabra.',
+   tp:['Raças para Angola','Instalações','Alimentação','Reprodução e parto','Cabritos','Ordenha','Vacinação','Verminose','Carrapatos','Leite de cabra','Comercialização','Expansão do rebanho']},
+  {id:14,cat:'c',cl:'🐐 Caprinos & Ovinos',ico:'🐑',bg:'linear-gradient(150deg,#1e1a0a,#0f0e05)',img:'ovelha.png',
+   t:'Guia Completo de Ovelhas em Angola',
+   d:'Damara e raças locais, controlo rigoroso de verminose, engorda de cordeiros e épocas de maior procura.',
+   tp:['Raças Damara e locais','Aprisco','Alimentação nativa','Suplementação','Reprodução','Cordeiros','Vacinação','Verminose','Tosquia','Engorda','Épocas de maior procura','Plano de negócio']},
+];
+
+function rBooks(cat){
+  const g=document.getElementById('grid');g.innerHTML='';
+  const L=cat==='all'?D:D.filter(b=>b.cat===cat);
+  L.forEach((b,i)=>{
+    const c=document.createElement('article');c.className='bc';
+    const covH=b.img
+      ?`<img src="${b.img}" alt="${b.t}" loading="lazy">`
+      :`<div class="bc-cov-ph" style="background:${b.bg}">
+          <div class="cov-icon">${b.ico}</div>
+          <div class="cov-top"><div class="cov-cat">${b.cl}</div><div class="cov-title">${b.t}</div></div>
+          <div class="cov-bottom"><div class="cov-brand">CyberSev · Angola 2026</div></div>
+        </div>`;
+    c.innerHTML=`
+      <div class="bc-cov">${covH}<span class="bc-badge">2026</span></div>
+      <div class="bc-body">
+        <div class="bc-cat">${b.cl}</div>
+        <h3 class="bc-title">${b.t}</h3>
+        <p class="bc-desc">${b.d}</p>
+        <div class="bc-pr-row"><span class="bc-price">5.000 Kz</span><span class="bc-pnote">PDF · WhatsApp</span></div>
+        <div class="bc-acts">
+          <button class="bca bca-out" onclick="oM(${b.id})">Ver Detalhes</button>
+          <button class="bca bca-wa" onclick="buy('${b.t.replace(/'/g,"\\'")}')">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.845L0 24l6.335-1.502A11.955 11.955 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.013-1.377l-.36-.213-3.76.891.946-3.653-.234-.375A9.785 9.785 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg>
+            Comprar
+          </button>
+        </div>
+      </div>`;
+    g.appendChild(c);
+  });
 }
+
+function flt(cat,btn){document.querySelectorAll('.flt').forEach(b=>b.classList.remove('on'));btn.classList.add('on');rBooks(cat);}
+
+function buy(t){
+  const m=encodeURIComponent(`Olá CyberSev! Quero comprar:\n\n📗 *${t}*\n💰 5.000 Kz\n\nComo procedo para o pagamento?`);
+  window.open(`https://wa.me/244959622160?text=${m}`,'_blank');
+}
+
+function oM(id){
+  const b=D.find(x=>x.id===id);if(!b)return;
+  const mc=document.getElementById('mc');
+  mc.style.background=b.bg;
+  mc.innerHTML=`<button class="md-x" onclick="cM()">✕</button><div style="font-size:72px;opacity:.18;position:absolute;">${b.ico}</div>`;
+  document.getElementById('mcat').textContent=b.cl;
+  document.getElementById('mtitle').textContent=b.t;
+  document.getElementById('mdesc').textContent=b.d;
+  const ul=document.getElementById('mtopics');ul.innerHTML='';
+  b.tp.forEach(t=>{const li=document.createElement('li');li.textContent=t;ul.appendChild(li);});
+  const m=encodeURIComponent(`Olá CyberSev! Quero comprar:\n\n📗 *${b.t}*\n💰 5.000 Kz\n\nComo procedo para o pagamento?`);
+  document.getElementById('mwa').href=`https://wa.me/244959622160?text=${m}`;
+  document.getElementById('ov').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function cM(){document.getElementById('ov').classList.remove('open');document.body.style.overflow='';}
+function cMO(e){if(e.target===document.getElementById('ov'))cM();}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')cM();});
+
+document.getElementById('burg').addEventListener('click',()=>document.getElementById('drw').classList.toggle('open'));
+function cD(){document.getElementById('drw').classList.remove('open');}
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>20));
+
+/* reveal on scroll */
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='none';}});},{threshold:.08});
+document.querySelectorAll('.sh,.wi,.tc,.bi,.trust-in,.proof,.btns,.eyebrow,.hero h1,.hero-p').forEach(el=>{
+  el.style.opacity='0';el.style.transform='translateY(22px)';
+  el.style.transition='opacity .6s ease, transform .6s ease';
+  io.observe(el);
+});
+
+rBooks('all');
 </script>
-<script src="script.js"></script>
 </body>
 </html>
