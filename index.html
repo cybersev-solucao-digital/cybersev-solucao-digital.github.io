@@ -102,11 +102,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:99;height:66px;display:flex;alig
 /* BOOK CARD */
 .bc{background:var(--w);border:1px solid var(--ln);border-radius:9px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s,border-color .3s;}
 .bc:hover{transform:translateY(-5px);box-shadow:0 12px 48px rgba(0,0,0,.1);border-color:rgba(184,146,42,.35);}
-.bc-cov{position:relative;aspect-ratio:3/4;overflow:hidden;}
+.bc-cov{position:relative;overflow:hidden;}
 .bc-cov-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:20px 18px;}
 .bc-cov-ph::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,var(--au3),var(--au),var(--au2));}
 .bc-cov-ph::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--au),var(--au3));}
-.bc-cov img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.bc-cov img{width:100%;height:auto;display:block;object-fit:contain;transition:transform .5s;}
 .bc:hover .bc-cov img{transform:scale(1.04);}
 .cov-top{width:100%;z-index:1;}
 .cov-cat{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(201,151,58,.9);font-weight:700;margin-bottom:4px;}
@@ -253,7 +253,7 @@ footer{background:var(--g);padding:clamp(44px,6vw,76px) 0 0;}
       <span><strong>14</strong> Manuais</span><div class="pdiv"></div>
       <span><strong>100%</strong> Angola</span><div class="pdiv"></div>
       <span>Entrega <strong>imediata</strong></span><div class="pdiv"></div>
-      <span>Desde <strong>3.900 Kz</strong></span>
+      <span>Desde <strong>3.500 Kz</strong></span>
     </div>
   </div>
 
@@ -350,7 +350,7 @@ footer{background:var(--g);padding:clamp(44px,6vw,76px) 0 0;}
     <path d="M500 220 Q600 150 700 200 Q600 270 500 220Z" fill="rgba(255,255,255,.03)"/>
   </svg>
 </div><div class="wrap"><div class="cta-in">
-  <div><h2>Angola tem a terra.<br>Tu tens o <em>conhecimento</em>.</h2><p>14 manuais. desde 3.900 Kz. Entrega imediata por WhatsApp.</p></div>
+  <div><h2>Angola tem a terra.<br>Tu tens o <em>conhecimento</em>.</h2><p>14 manuais. desde 3.500 Kz. Entrega imediata por WhatsApp.</p></div>
   <div class="cta-acts">
     <a href="#catalogo" class="btn btn-gold">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
@@ -389,7 +389,7 @@ footer{background:var(--g);padding:clamp(44px,6vw,76px) 0 0;}
       <p class="md-desc" id="mdesc"></p>
       <div class="md-topics"><div class="md-topics-ttl">O que vais aprender</div><ul id="mtopics"></ul></div>
       <div class="md-foot">
-        <div><div class="md-price">5.000 Kz</div><div class="md-pnote">PDF completo · Entrega imediata por WhatsApp</div></div>
+        <div><div class="md-price">${b.preco}</div><div class="md-pnote">PDF completo · Entrega imediata por WhatsApp</div></div>
         <a id="mwa" href="#" target="_blank" class="btn btn-wa btn-wa-big">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.845L0 24l6.335-1.502A11.955 11.955 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.013-1.377l-.36-.213-3.76.891.946-3.653-.234-.375A9.785 9.785 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg>
           Comprar Agora — 5.000 Kz
@@ -402,58 +402,72 @@ footer{background:var(--g);padding:clamp(44px,6vw,76px) 0 0;}
 <script>
 const D=[
   {id:1,cat:'a',cl:'🌱 Agricultura',ico:'🌾',bg:'linear-gradient(150deg,#1a4a1e,#0b2a0e)',img:'agricultura.png',
+  preco:'7.999 Kz',
    t:'Guia Completo do Produtor Angolano',
    d:'O manual mais completo sobre agricultura angolana. Do solo à venda, cada passo explicado com clareza para o produtor de qualquer região.',
    tp:['Tipos de solo angolano','Análise e preparo','Clima por região','Culturas prioritárias','Técnicas de plantio','Irrigação acessível','Controlo de pragas','Colheita e armazenamento','Como vender','Gestão financeira','Calendário agrícola','Glossário técnico']},
   {id:2,cat:'a',cl:'🌱 Agricultura',ico:'🌽',bg:'linear-gradient(150deg,#2d5a1e,#142e0c)',img:'milho.png',
+  preco:'4.500 Kz',
    t:'Como Plantar Milho em Angola',
    d:'Variedades, adubação correcta, controlo de lagarta do cartucho e estratégias para maximizar a produção por hectare.',
    tp:['Variedades para Angola','Preparo do terreno','Época correcta','Espaçamento','Adubação NPK','Lagarta do cartucho','Colheita e secagem','Armazenamento','Comercialização','Lucro por hectare','Erros fatais','Calendário']},
   {id:3,cat:'a',cl:'🌱 Agricultura',ico:'🍠',bg:'linear-gradient(150deg,#3d2e0a,#1e1606)',img:'mandioca.png',
+  preco:'4.000 Kz',
    t:'Cultivo de Mandioca — Produção e Comercialização',
    d:'A cultura mais resistente de Angola. Selecção de manivas, controlo do mosaico e processamento para vender com mais valor.',
    tp:['Variedades doces e amargas','Selecção de manivas','Técnica de plantio','Adubação','Mosaico da mandioca','Controlo de pragas','Colheita','Processamento','Farinha e fuba','Armazenamento','Mercados','Rentabilidade']},
   {id:4,cat:'a',cl:'🌱 Agricultura',ico:'🍅',bg:'linear-gradient(150deg,#4a1a1a,#2a0c0c)',img:'tomate.png',
+  preco:'4.000 Kz',
    t:'Cultivo de Tomate em Angola',
    d:'Alto valor, alta demanda. Produção de mudas, tutoramento correcto, controlo de requeima e estratégias de venda lucrativas.',
    tp:['Variedades recomendadas','Produção de mudas','Canteiro','Transplante','Tutoramento','Adubação','Irrigação gotejamento','Requeima','Mosca branca','Colheita','Comercialização','Rentabilidade']},
   {id:5,cat:'a',cl:'🌱 Agricultura',ico:'🫘',bg:'linear-gradient(150deg,#3a2a10,#1e1508)',img:'feijao.png',
+  preco:'4.000 Kz',
    t:'Como Plantar Feijão e Maximizar o Lucro',
    d:'Consórcio com milho, controlo da ferrugem e armazenamento sem perder para o caruncho. Lucro rápido com ciclo curto.',
    tp:['Tipos de feijão','Espaçamento','Adubação fosfatada','Inoculação Rhizobium','Consórcio milho+feijão','Controlo de caruncho','Ferrugem','Debulha','Armazenamento','Preços','Erros comuns','Calendário']},
   {id:6,cat:'a',cl:'🌱 Agricultura',ico:'🥬',bg:'linear-gradient(150deg,#1a3a1e,#0c1e10)',img:'horta.png',
+  preco:'4.500 Kz',
    t:'Horta Lucrativa em Pequenos Espaços',
    d:'O negócio mais rápido de Angola. Hortícolas de alto valor durante o cacimbo, quando os preços sobem e a concorrência cai.',
    tp:['Escolha do espaço','Canteiros elevados','Substrato caseiro','Hortícolas rentáveis','Alface e couve','Cenoura e cebola','Rega correcta','Pragas naturais','Colheita e embalagem','Venda WhatsApp','Horta urbana','Plano de 30 dias']},
   {id:7,cat:'g',cl:'🐄 Gado',ico:'🐄',bg:'linear-gradient(150deg,#2e1a0a,#180e05)',img:'bovino.png',
+  preco:'5.999 Kz',
    t:'Guia Completo de Bovinos em Angola',
    d:'Da raça à comercialização. Criação adaptada ao clima angolano com foco em saúde animal, reprodução e lucro.',
    tp:['Raças para Angola','Currais','Alimentação e pastagem','Reprodução e parto','Bezerros','Vacinação obrigatória','Febre aftosa','Tristeza parasitária','Carrapatos','Produção de leite','Engorda para corte','Comercialização']},
   {id:8,cat:'g',cl:'🐄 Gado',ico:'🐷',bg:'linear-gradient(150deg,#3a1a2e,#1e0c18)',img:'suino.png',
+  preco:'3.900 Kz',
    t:'Guia Completo de Suínos em Angola',
    d:'Pocilgas eficientes, alimentação por fase, vacinação correcta e como comercializar suínos com lucro real.',
    tp:['Raças recomendadas','Pocilga','Alimentação por fase','Leitões','Vacinação','Doenças','Parasitas','Engorda eficiente','Custo/kg','Abate','Biosseguridade','Plano de negócio']},
   {id:9,cat:'av',cl:'🐔 Aves',ico:'🍗',bg:'linear-gradient(150deg,#3a2e0a,#1e1805)',img:'frango.png',
+  preco:'3.500 Kz',
    t:'Guia de Frango de Corte em Angola',
    d:'Linhagens Cobb e Ross, 1.ª semana crítica, conversão alimentar e controlo total de Newcastle e Gumboro.',
    tp:['Linhagens Cobb, Ross, Hubbard','Aviário','Aquecimento 1.ª semana','Alimentação por fase','Conversão alimentar','Programa de luz','Vacinação','Newcastle e Gumboro','Biosseguridade','Vazio sanitário','Comercialização','Plano 500–5000 aves']},
   {id:10,cat:'av',cl:'🐔 Aves',ico:'🥚',bg:'linear-gradient(150deg,#2e2a0a,#181605)',img:'poedeira.png',
+  preco:'3.500 Kz',
    t:'Criação de Galinhas Poedeiras',
    d:'ISA Brown e Hy-Line, programa de luz, gestão da postura e como vender ovos com regularidade no mercado.',
    tp:['Linhagens ISA Brown, Lohmann','Galpão','Recria das frangas','Alimentação','Programa de luz','Início da postura','Recolha e classificação','Vacinação','Doenças de postura','Muda forçada','Fim do ciclo','Registos diários']},
   {id:11,cat:'av',cl:'🐔 Aves',ico:'🏗️',bg:'linear-gradient(150deg,#0a2e2e,#051818)',img:'aviario.png',
+  preco:'3.500 Kz',
    t:'Como Montar um Aviário Lucrativo',
    d:'Do terreno ao primeiro lote. Projecto, licenciamento em Angola, gestão e como crescer o negócio avícola.',
    tp:['Terreno','Projecto do galpão','Equipamentos','Custos em Kz','Licenciamento Angola','Corte vs postura','Fornecedores','Gestão diária','Controlo financeiro','Marketing e vendas','Gestão de crises','Plano de expansão']},
   {id:12,cat:'av',cl:'🐔 Aves',ico:'🦆',bg:'linear-gradient(150deg,#0a1e3a,#050f1e)',img:'pato.png',
+  preco:'3.500 Kz',
    t:'Criação de Patos em Angola',
    d:'Mercado pouco explorado, margem alta. Muscovy e Pekin, produção de ovos e carne para mercados locais.',
    tp:['Raças Muscovy, Pekin, Khaki','Instalações','Alimentação','Patinhos','Incubação natural','Vacinação','Doenças','Patos para corte','Patos poedeiros','Comercialização','Custo e lucro','Plano de negócio']},
   {id:13,cat:'c',cl:'🐐 Caprinos & Ovinos',ico:'🐐',bg:'linear-gradient(150deg,#2e1e0a,#180f05)',img:'cabra.png',
+  preco:'3.999 Kz',
    t:'Guia Completo de Cabras em Angola',
    d:'Raças Boer e locais, manejo reprodutivo, controlo de verminose e mercado de carne e leite de cabra.',
    tp:['Raças para Angola','Instalações','Alimentação','Reprodução e parto','Cabritos','Ordenha','Vacinação','Verminose','Carrapatos','Leite de cabra','Comercialização','Expansão do rebanho']},
   {id:14,cat:'c',cl:'🐐 Caprinos & Ovinos',ico:'🐑',bg:'linear-gradient(150deg,#1e1a0a,#0f0e05)',img:'ovelha.png',
+  preco:'3.999 Kz',
    t:'Guia Completo de Ovelhas em Angola',
    d:'Damara e raças locais, controlo rigoroso de verminose, engorda de cordeiros e épocas de maior procura.',
    tp:['Raças Damara e locais','Aprisco','Alimentação nativa','Suplementação','Reprodução','Cordeiros','Vacinação','Verminose','Tosquia','Engorda','Épocas de maior procura','Plano de negócio']},
@@ -477,7 +491,7 @@ function rBooks(cat){
         <div class="bc-cat">${b.cl}</div>
         <h3 class="bc-title">${b.t}</h3>
         <p class="bc-desc">${b.d}</p>
-        <div class="bc-pr-row"><span class="bc-price">5.000 Kz</span><span class="bc-pnote">PDF · WhatsApp</span></div>
+        <div class="bc-pr-row"><span class="bc-price">${b.preco}</span><span class="bc-pnote">PDF · WhatsApp</span></div>
         <div class="bc-acts">
           <button class="bca bca-out" onclick="oM(${b.id})">Ver Detalhes</button>
           <button class="bca bca-wa" onclick="buy('${b.t.replace(/'/g,"\\'")}')">
@@ -507,7 +521,7 @@ function oM(id){
   document.getElementById('mdesc').textContent=b.d;
   const ul=document.getElementById('mtopics');ul.innerHTML='';
   b.tp.forEach(t=>{const li=document.createElement('li');li.textContent=t;ul.appendChild(li);});
-  const m=encodeURIComponent(`Olá CyberSev! Quero comprar:\n\n📗 *${b.t}*\n💰 5.000 Kz\n\nComo procedo para o pagamento?`);
+  const m=encodeURIComponent(`Olá CyberSev! Quero comprar:\n\n📗 *${b.t}*\n💰 ${b.preco}\n\nComo procedo para o pagamento?`);
   document.getElementById('mwa').href=`https://wa.me/244959622160?text=${m}`;
   document.getElementById('ov').classList.add('open');
   document.body.style.overflow='hidden';
